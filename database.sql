@@ -1,0 +1,22 @@
+-- CREATE DATABASE eval_doc;
+USE eval_doc;
+
+CREATE TABLE users(
+id INT PRIMARY KEY NOT NULL,
+usuario VARCHAR(50) NOT NULL,
+email VARCHAR(255) NOT NULL,
+password VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE stats(
+idUser INT NOT NULL,
+FOREIGN KEY (idUser) REFERENCES users(id),
+score DOUBLE NOT NULL
+);
+
+DROP TABLE users;
+DROP TABLE evalacion;
+
+INSERT INTO users VALUES("")
+
+SELECT * FROM users;
