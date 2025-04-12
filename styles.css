@@ -22,7 +22,7 @@ body {
 .mainContainer {
   display: flex;
   flex-direction: row;
-  height: 100vh;
+  height: 100%;
 }
 
 .loginContainer {
@@ -44,7 +44,7 @@ body {
   margin-right: 20px;
 }
 
-.loginText {
+#loginForm {
   padding: 30px;
 }
 

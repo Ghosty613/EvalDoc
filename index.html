@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <title>Login</title>
   <link rel="stylesheet" href="styles.css">
-  <script src="script.js"></script>
+  <script src="script.js" defer></script>
 </head>
 
 <body>
@@ -18,13 +18,12 @@
         <div class="bodyBlock">
           <div id="text">Tu opinión es importante para mejorar juntos.</div>
         </div>
-        <div id="copyright">Copyright© 2025 Instituto Tecnológico De Ciudad Victoria. Todos los derechos reservados.
-        </div>
+        <div id="copyright">Copyright© 2025 Instituto Tecnológico De Ciudad Victoria. Todos los derechos reservados.</div>
       </div>
 
     <div class="right">
       <div class="loginContainer">
-        <div class="loginText">
+        <form id="loginForm">
           <div class="input">
             <input type="text" placeholder="Usuario" id="userText">
             <input type="password" placeholder="Contraseña" id="passwordText">
@@ -34,7 +33,7 @@
             <button type="button" class="linkButton" id="forgot">Olvidaste tu contraseña</button>
             <button type="button" class="linkButton" id="register">Regístrate</button>
           </div>
-        </div>
+        </form>
       </div>
     </div>
   </div>
