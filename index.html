@@ -12,23 +12,23 @@
 
   <div class="mainContainer">
     <div class="left">
-        <div class=titleBlock>
-          <h1 id="header">Instituto Tecnológico de Ciudad Victoria</h1>
-        </div>
-        <div class="bodyBlock">
-          <div id="text">Tu opinión es importante para mejorar juntos.</div>
-        </div>
-        <div id="copyright">Copyright© 2025 Instituto Tecnológico De Ciudad Victoria. Todos los derechos reservados.</div>
+      <div class=titleBlock>
+        <h1 id="header">Instituto Tecnológico de Ciudad Victoria</h1>
       </div>
+      <div class="bodyBlock">
+        <div id="text">Tu opinión es importante para mejorar juntos.</div>
+      </div>
+      <div id="copyright">Copyright© 2025 Instituto Tecnológico De Ciudad Victoria. Todos los derechos reservados.</div>
+    </div>
 
     <div class="right">
       <div class="loginContainer">
-        <form id="loginForm">
+        <form id="loginForm" action="login.php" method="POST">
           <div class="input">
-            <input type="text" placeholder="Usuario" id="userText">
-            <input type="password" placeholder="Contraseña" id="passwordText">
+            <input type="text" name="user" placeholder="Usuario" id="userText">
+            <input type="password" name="password" placeholder="Contraseña" id="passwordText">
           </div>
-          <button id="login">INGRESAR</button>
+          <button type="submit" id="login">INGRESAR</button>
           <div class="helpContainer">
             <button type="button" class="linkButton" id="forgot">Olvidaste tu contraseña</button>
             <button type="button" class="linkButton" id="register">Regístrate</button>
@@ -37,4 +37,5 @@
       </div>
     </div>
   </div>
+  
 </body>

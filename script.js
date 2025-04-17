@@ -1,56 +1,66 @@
-const loginForm = document.getElementById('loginForm');
-const userInput = document.getElementById('userText');
-const passwordInput = document.getElementById('passwordText');
+document.addEventListener('DOMContentLoaded', () => {
+    const loginForm = document.getElementById('loginForm');
+    const userInput = document.getElementById('userText');
+    const passwordInput = document.getElementById('passwordText');
 
-function validarCampos(usuario, password) {
-    if (!usuario || !password) {
-        alert("Por favor, completa todos los campos.");
-        return false;
-    }
-    if (usuario.length < 3) {
-        alert("El nombre de usuario debe tener al menos 3 caracteres.");
-        return false;
-    } else if(usuario.length > 50){
-        alert("El longitud del nombre de usuario debe ser igual o menor a 50 caracteres");
-        return false;
-    }
-    if (password.length < 6) {
-        alert("La contraseña debe tener al menos 6 caracteres.");
-        return false;
-    } else if(password.length > 100){
-        alert("La longitud contraseña debe ser igual o menor a 100 caracteres");
-        return false;
-    }
-    return true;
-}
-
-async function manejarSubmit(event) {
-    event.preventDefault();
-
-    const usuario = userInput.value.trim();
-    const password = passwordInput.value.trim();
-
-    if (!validarCampos(usuario, password)) return;
-
-    const datos = { usuario, password };
-
-    try {
-        const response = await fetch('login.php', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(datos),
-        });
-
-        if (response.ok) {
-            const mensaje = await response.text();
-            alert(mensaje);
-        } else {
-            alert('Hubo un error en el servidor.');
+    // Solo ejecuta el código relacionado con el formulario si existe en el DOM
+    if (loginForm) {
+        function validarCampos(usuario, password) {
+            if (!usuario || !password) {
+                alert("Por favor, completa todos los campos.");
+                return false;
+            }
+            return true;
         }
-    } catch (error) {
-        console.error('Error en la solicitud:', error);
-        alert('No se pudo conectar con el servidor.');
-    }
-}
 
-loginForm.addEventListener('submit', manejarSubmit);
+        async function manejarSubmit(event) {
+            event.preventDefault();
+
+            const usuario = userInput.value.trim();
+            const password = passwordInput.value.trim();
+
+            if (!validarCampos(usuario, password)) return;
+
+            const datos = { usuario, password };
+
+            try {
+                const response = await fetch('./login.php', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(datos),
+                });
+
+                const result = await response.json();
+
+                console.log(result);
+
+                if (result.success) {
+                    console.log('Nombre recibido del servidor:', result.nombre);
+                    localStorage.setItem('nombreUsuario', result.nombre); // Guardar el nombre del usuario
+                    window.location.href = result.redirect;
+                } else {
+                    alert(result.message);
+                }
+            } catch (error) {
+                console.error('Error en la solicitud:', error);
+                alert('No se pudo conectar con el servidor.');
+            }
+        }
+
+        loginForm.addEventListener('submit', manejarSubmit);
+    } else {
+        console.log('No se encontró el formulario de inicio de sesión en esta página.');
+    }
+
+    // Mostrar el nombre del usuario en la página principal
+    const nombreUsuario = localStorage.getItem('nombreUsuario');
+    console.log('Nombre de usuario:', nombreUsuario);
+    if (nombreUsuario) {
+        const nombreUsuarioElement = document.getElementById('nombreUsuario');
+        if (nombreUsuarioElement) {
+            nombreUsuarioElement.textContent = nombreUsuario;
+        } else {
+            console.error('El elemento con ID "nombreUsuario" no se encontró en el DOM.');
+        }
+    }
+});

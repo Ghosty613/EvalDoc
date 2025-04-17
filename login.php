@@ -1,53 +1,43 @@
 <?php
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
+header('Content-Type: application/json');
 
-$host = 'localhost'; 
-$dbname = 'eval_doc';  
+$host = 'localhost';
+$dbname = 'eval_doc';
 $username = 'root';
-$password = 'estefy04'; 
+$password = 'estefy04';
 
-$conn = new mysqli($host, $username, $password, $dbname);
-
-if ($conn->connect_error) {
-    die("Conexión fallida: " . $conn->connect_error);
-}
-
-$data = json_decode(file_get_contents("php://input"));
-if (!$data) {
-    http_response_code(400);
-    echo "No se recibieron datos.";
+try {
+    $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $username, $password);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch (PDOException $e) {
+    echo json_encode(['success' => false, 'message' => 'Error al conectar con la base de datos.']);
     exit;
 }
 
-if (!isset($data->usuario) || !isset($data->password)) {
-    http_response_code(400);
-    echo "Datos incompletos.";
-    exit;
-}
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $input = json_decode(file_get_contents('php://input'), true);
+    $user = $input['usuario'] ?? '';
+    $pass = $input['password'] ?? '';
 
-$usuario = $data->usuario;
-$password = $data->password;
+    if (!empty($user) && !empty($pass)) {
+        $stmt = $pdo->prepare("SELECT * FROM users WHERE usuario = :username AND password = :password");
+        $stmt->bindParam(':username', $user);
+        $stmt->bindParam(':password', $pass);
+        $stmt->execute();
 
-$sql = "SELECT * FROM users WHERE usuario = ?";
-$stmt = $conn->prepare($sql);
-$stmt->bind_param("s", $usuario);
-$stmt->execute();
-$result = $stmt->get_result();
-
-if ($result->num_rows > 0) {
-    echo "Usuario encontrado";
-    $row = $result->fetch_assoc();
-
-    if (password_verify($password, $row['password'])) {
-        echo "Login exitoso";
+        if ($stmt->rowCount() > 0) {
+            $userData = $stmt->fetch(PDO::FETCH_ASSOC);
+            echo json_encode([
+                'success' => true,
+                'message' => 'Inicio de sesión exitoso.',
+                'redirect' => 'main.html',
+                'nombre' => $userData['usuario'] 
+            ]);
+        } else {
+            echo json_encode(['success' => false, 'message' => 'Usuario o contraseña incorrectos.']);
+        }
     } else {
-        echo "Usuario o contraseña no coinciden";
+        echo json_encode(['success' => false, 'message' => 'Por favor, completa todos los campos.']);
     }
-} else {
-    echo "Usuario no encontrado";
 }
-
-$stmt->close();
-$conn->close();
 ?>

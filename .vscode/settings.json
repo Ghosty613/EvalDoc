@@ -1,0 +1,19 @@
+{
+    "sqltools.connections": [
+        {
+            "mysqlOptions": {
+                "authProtocol": "default",
+                "enableSsl": "Disabled"
+            },
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 3306,
+            "driver": "MySQL",
+            "name": "eval_doc",
+            "database": "eval_doc",
+            "username": "root",
+            "password": "estefy04"
+        }
+    ],
+    "php.version": "8.4"
+}
