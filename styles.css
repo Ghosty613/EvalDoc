@@ -168,11 +168,12 @@ body {
 nav {
   background-color: #1b396b;
   text-decoration: none;
-  height: 60px;
+  height: 80px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 20px;
+  font-size: 18px;
 }
 
 nav a {
@@ -246,6 +247,163 @@ nav a:last-child {
   margin-top: 5px;
 }
 
-.social{
+.pageContainer {
+  display: flex;
+  flex-direction: column;
+  min-height: 60vh;
+}
+
+.pageContent {
+  display: flex;
+  flex: 1;
+}
+
+.leftSide,
+.rightSide {
+  flex: 1;
+  width: 50%;
+  height: 75vh;
+}
+
+.rightSide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-left: 125px;
+  margin-right: 125px;
+}
+
+.bienvenido {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #1b396b;
+  color: white;
+  margin-top: 80px;
+  margin-left: 100px;
+  width: 560px;
+  padding: 20px;
+  border-radius: 100px;
+  font-size: 25px;
+}
+
+.social {
   background-color: #EEF0F4;
+  width: 500px;
+  margin-left: 100px;
+  margin-top: 20px;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-radius: 50px;
+  font-size: 20px;
+}
+
+.social .social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.social img {
+  width: 50px;
+  height: auto;
+  margin: 10px;
+}
+
+.carousel-container {
+  position: relative;
+  width: 100%;
+  max-width: none;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.carousel-slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+  min-width: 100%;
+  position: relative;
+  object-fit: cover;
+}
+
+.slide img {
+  width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 15px;
+  border-radius: 100px;
+}
+
+.carousel-btn.prev {
+  left: 5px;
+}
+
+.carousel-btn.next {
+  right: 5px;
+}
+
+.carousel-indicators {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 5px;
+}
+
+.indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #A7ADB9;
+  cursor: pointer;
+  border: none;
+}
+
+.indicator.active {
+  background: #1b396b;
+}
+
+.noticias{
+  display: flex;
+  color: white;
+  background-color: #1b396b;
+  width: 225px;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  height: 50px;
+  font-size: 20px;
+  border-radius: 50px;
+  margin: 20px;
+}
+
+.footer {
+  text-align: center;
+  background-color: #1b396b;
+  color: white;
+  font-size: 13px;
+  width: 35%;
+  margin: 0 auto 10px auto;
+  border-radius: 30px;
 }

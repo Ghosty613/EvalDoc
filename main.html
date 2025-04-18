@@ -2,15 +2,15 @@
 <html lang="es">
 
 <head>
-  <meta charset="UTF-8">
-  <title>Bienvenido</title>
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <title>Menú Principal</title>
+  <link rel="stylesheet" href="styles.css" />
   <script src="script.js" defer></script>
 </head>
 
 <body>
   <nav>
-    <a href="/main.html"><img src="images/casa.png" class="icono-casa"></a>
+    <a href="/main.html"><img src="images/casa.png" class="icono-casa" /></a>
     <div class="dropdown-e">
       <a class="dropbtn-e">Evaluación Docente</a>
       <div class="dropdown-content-e">
@@ -19,32 +19,60 @@
       </div>
     </div>
     <a href="#estadisticas">Estadísticas</a>
-    <a href="#usuario"><img src="/images/usuario.png" class="icono-user"></a>
+    <a href="#usuario"><img src="/images/usuario.png" class="icono-user" /></a>
   </nav>
-  <div class="bienvenido">
-    Bienvenido(a), <br> <span id="nombreUsuario"></span>
-  </div>
-  <div class="social">Siguenos en nuestras redes sociales
-    <div class="social-icons">
-      <a href="https://www.facebook.com/TECNM.ITVICTORIA" target="_blank"><img src="/images/facebook.png"
-          alt="Facebook"></a>
-      <a href="https://x.com/TecNMCdVictoria" target="_blank"><img src="/images/twitter.png" alt="Twitter"></a>
-      <a href="https://www.instagram.com/tecnm_cd.victoria/" target="_blank"><img src="/images/instagram.png"
-          alt="Instagram"></a>
+  <div class="pageContainer">
+    <div class="pageContent">
+      <div class="leftSide">
+        <div class="bienvenido">
+          Bienvenido(a), <span id="nombreUsuario"></span>
+        </div>
+        <div class="social">
+          Siguenos en nuestras redes sociales
+          <div class="social-icons">
+            <a href="https://www.facebook.com/TECNM.ITVICTORIA" target="_blank"><img src="/images/facebook.png"
+                alt="Facebook" /></a>
+            <a href="https://x.com/TecNMCdVictoria" target="_blank"><img src="/images/twitter.png" alt="Twitter" /></a>
+            <a href="https://www.instagram.com/tecnm_cd.victoria/" target="_blank"><img src="/images/instagram.png"
+                alt="Instagram" /></a>
+          </div>
+          Si tienes alguna duda escribe a webmaster@cdvictoria.tecnm.mx
+        </div>
+      </div>
+      <div class="rightSide">
+        <div class="noticias">Últimas noticias</div>
+        <div class="carousel-container">
+          <div class="carousel-slides">
+            <div class="slide">
+              <img src="/images/carrusel_1.png" alt="Imagen 1">
+            </div>
+            <div class="slide">
+              <img src="/images/carrusel_2.png" alt="Imagen 2">
+            </div>
+            <div class="slide">
+              <img src="/images/carrusel_3.png" alt="Imagen 3">
+            </div>
+            <div class="slide">
+              <img src="/images/carrusel_4.png" alt="Imagen 4">
+            </div>
+          </div>
+
+          <button class="carousel-btn prev">❮</button>
+          <button class="carousel-btn next">❯</button>
+
+          <div class="carousel-indicators">
+            <button class="indicator active"></button>
+            <button class="indicator"></button>
+            <button class="indicator"></button>
+            <button class="indicator"></button>
+          </div>
+        </div>
+      </div>
     </div>
-    Si tienes alguna duda escribe a webmaster@cdvictoria.tecnm.mx
-  </div>
-  <div id="tnoticias">Últimas noticias</div>
-  <div class="carrusel">
-    <div class="slide"><img src="/images/carrusel_1.png" alt="Imagen_1"></div>
-    <div class="slide"><img src="/images/carrusel_2.png" alt="Imagen_2"></div>
-    <div class="slide"><img src="/images/carrusel_3.png" alt="Imagen_3"></div>
-    <div class="slide"><img src="/images/carrusel_4.png" alt="Imagen_4"></div>
-  </div>
-  <div class="footer">
-    Copyright© 2025 Instituto Tecnológico De Ciudad VIctoria. <br>
-    Todos los derechos reservados.
-  </div>
+    <div class="footer">
+      <p> Copyright© 2025 Instituto Tecnológico De Ciudad VIctoria. <br>
+        Todos los derechos reservados.</p>
+    </div>
 </body>
 
 </html>
