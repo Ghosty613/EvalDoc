@@ -39,7 +39,7 @@ body {
 
 .helpContainer {
   display: flex;
-  gap: 130px;
+  gap: 100px;
   margin-top: 5px;
   margin-left: 15px;
   margin-right: 20px;
@@ -138,29 +138,20 @@ body {
   font-family: Garet, sans-serif;
 }
 
-#forgot {
-  color: white;
-  background-color: transparent;
-  border-color: transparent;
-  cursor: pointer;
-  font-family: Garet, sans-serif;
-  font-weight: bold;
-}
-
-#forgot:active {
-  text-decoration: underline;
-}
-
+#forgot,
 #register {
   color: white;
-  background-color: transparent;
   border-color: transparent;
   cursor: pointer;
   font-family: Garet, sans-serif;
   font-weight: bold;
+  font-size: 15px;
+  border-radius: 50px;
+  text-decoration: none;
 }
 
-#register:active {
+#register:active,
+#forgot:active {
   text-decoration: underline;
 }
 
@@ -384,7 +375,7 @@ nav a:last-child {
   background: #1b396b;
 }
 
-.noticias{
+.noticias {
   display: flex;
   color: white;
   background-color: #1b396b;
@@ -406,4 +397,24 @@ nav a:last-child {
   width: 35%;
   margin: 0 auto 10px auto;
   border-radius: 30px;
+}
+
+.registerContainer {
+  background-color: #EEF0F4;
+  width: 50%;
+  min-height: 75%;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin: auto;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+}
+
+.password-container {
+  position: relative;
+  width: 100%;
 }
