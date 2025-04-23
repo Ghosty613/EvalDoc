@@ -2,7 +2,7 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-header('Content-Type: application/json'); 
+header('Content-Type: application/json');
 
 $host = 'localhost';
 $dbname = 'eval_doc';
@@ -15,8 +15,7 @@ try {
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (!isset($_POST['email']) || !isset($_POST['user']) || !isset($_POST['password'])) {
-            // Redirigir con un parámetro de error
-            header("Location: register.html?error=Faltan campos requeridos");
+            echo json_encode(['success' => false, 'message' => 'Faltan campos requeridos']);
             exit();
         }
 
@@ -30,25 +29,22 @@ try {
         $stmt->execute([$email, $user]);
 
         if ($stmt->rowCount() > 0) {
-            // Redirigir con mensaje de error si ya existe el usuario
-            header("Location: register.html?error=El usuario o correo ya existe");
+            echo json_encode(['success' => false, 'message' => 'El usuario o correo ya existe']);
             exit();
         }
 
-        // Insertar nuevo usuario
         $sql = "INSERT INTO users (email, usuario, password, tipo_usuario) VALUES (?, ?, ?, ?)";
         $stmt = $conn->prepare($sql);
-        $stmt->execute([$email, $user, $password, $tipo_usuario]);
+        $stmt->execute([$email, $user, password_hash($password, PASSWORD_DEFAULT), $tipo_usuario]);
 
-        // Redirigir con mensaje de éxito
-        header("Location: register.html?success=Usuario registrado exitosamente");
+        echo json_encode(['success' => true, 'message' => 'Usuario registrado exitosamente']);
         exit();
     } else {
-        header("Location: register.html?error=Método no permitido");
+        echo json_encode(['success' => false, 'message' => 'Método no permitido']);
         exit();
     }
 } catch (PDOException $e) {
-    header("Location: register.html?error=Error en el servidor: " . $e->getMessage());
+    echo json_encode(['success' => false, 'message' => 'Error en el servidor: ' . $e->getMessage()]);
     exit();
 }
 ?>

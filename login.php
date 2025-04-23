@@ -31,7 +31,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 'success' => true,
                 'message' => 'Inicio de sesión exitoso.',
                 'redirect' => 'main.html',
-                'nombre' => $userData['usuario'] 
+                'nombre' => $userData['usuario'],
+                'tipo_usuario' => $userData['tipo_usuario']  
             ]);
         } else {
             echo json_encode(['success' => false, 'message' => 'Usuario o contraseña incorrectos.']);

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Seleccionar Docente</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="scripts/navbar.js" defer></script>
+    <script src="scripts/cargarDocentes.js" defer></script>
+    <script src="scripts/verificar.js" defer></script>
+</head>
+
+<body>
+    <div id="navbar-placeholder"></div>
+
+    <div id="text">Antes de comenzar, ingresa los token que te impartieron los docentes con los que tomas tus materias
+        actuales.
+        <br>
+        Una vez ingresado, puedes presionar el botón "Evaluar" al docente deseado y se mostrarán las preguntas
+        correspondientes. 
+    </div>
+
+    <div id="advertencia">⚠️ Advertencia ⚠️<br> Antes de presionar el botón de "Finalizar la evaluación docente" asegurate de haber realizado todas las evaluaciones correspondientes a tus materias en este periodo escolar</div>
+
+    <div class="tokenDocentes">
+        <input type="text" id="tokenInput" placeholder="Ingresa tu token">
+        <button onclick="cargarDocentes()" id="buscarDocentes">Buscar Docentes</button>
+
+        <table id="tablaDocentes">
+            <thead>
+                <tr>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+    <div id="contenedor-finalizar">
+        <button id="finalizar">Finalizar la evaluación docente</button>
+    </div>
+</body>
+
+</html>
