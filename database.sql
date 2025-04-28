@@ -17,36 +17,42 @@ CREATE TABLE docentes (
     token VARCHAR(50)
 );
 
-CREATE TABLE asignaciones (
+CREATE TABLE alumno_docente (
     id INT AUTO_INCREMENT PRIMARY KEY,
+    alumno_id INT NOT NULL,
+    docente_id INT NOT NULL,
+    UNIQUE KEY (alumno_id, docente_id),
+    FOREIGN KEY (alumno_id) REFERENCES users(id),
+    FOREIGN KEY (docente_id) REFERENCES docentes(id)
+);
+
+CREATE TABLE evaluaciones (
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     id_alumno INT NOT NULL,
     id_docente INT NOT NULL,
-    id_periodo INT NOT NULL,
-    FOREIGN KEY (id_alumno) REFERENCES users(id) ON DELETE CASCADE,
-    FOREIGN KEY (id_docente) REFERENCES docentes(id) ON DELETE CASCADE,
-    FOREIGN KEY (id_periodo) REFERENCES periodos(id) ON DELETE CASCADE
-);
-
-CREATE TABLE evaluacion (
-    idEval INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    idUser INT NOT NULL FOREIGN KEY (idUser) REFERENCES users(id),
     periodo VARCHAR(50),
-    puntaje DOUBLE NOT NULL,
-);
-
-CREATE TABLE periodos (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    nombre VARCHAR(30) NOT NULL UNIQUE
+    calificacion DOUBLE NOT NULL,
+    fecha TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (id_alumno) REFERENCES users(id),
+    FOREIGN KEY (id_docente) REFERENCES docentes(id)
 );
 
 --DROP TABLE users;
 --DROP TABLE evalacion;
+DROP TABLE docentes;
+DROP TABLE alumno_docente;
 
 SELECT *
 FROM users;
 
 SELECT *
 FROM docentes;
+
+SELECT * FROM periodos;
+
+SELECT * FROM alumno_docente;
+
+SELECT * FROM evaluaciones;
 
 TRUNCATE TABLE users;
 
@@ -73,3 +79,10 @@ VALUES (
         'Ing. de Software',
         '>}dsJI@3ZwO4VD=A-0YP6hjDnqe&nt'
     );
+
+INSERT INTO docentes (nombre, materia, token)
+VALUES (
+    'Juan Pérez',
+    'Estructura de Datos',
+    'aB3@x!2KdR#7LpQ^uT0vZ9mEwY$'
+);

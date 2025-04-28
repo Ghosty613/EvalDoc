@@ -498,6 +498,7 @@ nav a:last-child {
   margin-bottom: 5%;
   border: 1px solid #ddd;
   font-size: 20px;
+  font-family: Garet, sans-serif;
 }
 
 #registerBtn {
@@ -641,4 +642,36 @@ nav a:last-child {
   justify-content: center;
   text-align: center;
   
+}
+
+/*Formulario*/
+#contenedor-formulario {
+  background-color: #EEF0F4;
+  display:flex;
+  margin-inline: 25%;
+  border-radius: 20px;
+  padding: 2%;
+  margin-top: 2%;
+  margin-bottom: 2% !important;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+#eval-title {
+  display: flex;
+  justify-content: center;
+  margin-top: 1%;
+}
+
+#disclaimer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#finalizar_evaluacion {
+  background-color: #1b396b;
+  border-color: transparent;
+  color: white;
+  font-size: 2vh;
+  float: right;
 }

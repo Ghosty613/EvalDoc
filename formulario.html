@@ -5,343 +5,350 @@
   <meta charset="UTF-8" />
   <link rel="stylesheet" href="styles.css" />
   <script src="scripts/navbar.js" defer></script>
+  <script src="scripts/guardarEvaluacion.js" defer></script>
 </head>
 
 <body>
   <div id="navbar-placeholder"></div>
 
-  <form>
-    <p>¿Consideras que el docente demuestra un buen conocimiento sobre la materia que imparte?</p>
-    <input type="radio" id="p1-op1" name="pregunta1" value="De acuerdo" required>
-    <label for="p1-op1">De acuerdo</label><br>
-    <input type="radio" id="p1-op2" name="pregunta1" value="Parcialmente de acuerdo">
-    <label for="p1-op2">Parcialmente de acuerdo</label><br>
-    <input type="radio" id="p1-op3" name="pregunta1" value="Neutral">
-    <label for="p1-op3">Neutral</label><br>
-    <input type="radio" id="p1-op4" name="pregunta1" value="Parcialmente en desacuerdo">
-    <label for="p1-op4">Parcialmente en desacuerdo</label><br>
-    <input type="radio" id="p1-op5" name="pregunta1" value="En desacuerdo">
-    <label for="p1-op5">En desacuerdo</label><br><br>
-    <p>¿El contenido del curso es actualizado y relevante para tu formación?</p>
-    <input type="radio" id="p2-op1" name="pregunta2" value="De acuerdo" required>
-    <label for="p2-op1">De acuerdo</label><br>
-    <input type="radio" id="p2-op2" name="pregunta2" value="Parcialmente de acuerdo">
-    <label for="p2-op2">Parcialmente de acuerdo</label><br>
-    <input type="radio" id="p2-op3" name="pregunta2" value="Neutral">
-    <label for="p2-op3">Neutral</label><br>
-    <input type="radio" id="p2-op4" name="pregunta2" value="Parcialmente en desacuerdo">
-    <label for="p2-op4">Parcialmente en desacuerdo</label><br>
-    <input type="radio" id="p2-op5" name="pregunta2" value="En desacuerdo">
-    <label for="p2-op5">En desacuerdo</label><br><br>
-    <p>¿El docente explica los temas de manera clara y comprensible?</p>
-    <input type="radio" id="p3-op1" name="pregunta3" value="De acuerdo" required>
-    <label for="p3-op1">De acuerdo</label><br>
-    <input type="radio" id="p3-op2" name="pregunta3" value="Parcialmente de acuerdo">
-    <label for="p3-op2">Parcialmente de acuerdo</label><br>
-    <input type="radio" id="p3-op3" name="pregunta3" value="Neutral">
-    <label for="p3-op3">Neutral</label><br>
-    <input type="radio" id="p3-op4" name="pregunta3" value="Parcialmente en desacuerdo">
-    <label for="p3-op4">Parcialmente en desacuerdo</label><br>
-    <input type="radio" id="p3-op5" name="pregunta3" value="En desacuerdo">
-    <label for="p3-op5">En desacuerdo</label><br><br>
-    <p>¿Se presentan los objetivos del curso de manera clara al inicio?</p>
-    <input type="radio" id="p4-op1" name="pregunta4" value="De acuerdo" required>
-    <label for="p4-op1">De acuerdo</label><br>
-    <input type="radio" id="p4-op2" name="pregunta4" value="Parcialmente de acuerdo">
-    <label for="p4-op2">Parcialmente de acuerdo</label><br>
-    <input type="radio" id="p4-op3" name="pregunta4" value="Neutral">
-    <label for="p4-op3">Neutral</label><br>
-    <input type="radio" id="p4-op4" name="pregunta4" value="Parcialmente en desacuerdo">
-    <label for="p4-op4">Parcialmente en desacuerdo</label><br>
-    <input type="radio" id="p4-op5" name="pregunta4" value="En desacuerdo">
-    <label for="p4-op5">En desacuerdo</label><br><br>
-    <p>¿Los temas del curso se desarrollan en un orden lógico y estructurado?</p>
-    <input type="radio" id="p5-op1" name="pregunta5" value="De acuerdo" required>
-    <label for="p5-op1">De acuerdo</label><br>
-    <input type="radio" id="p5-op2" name="pregunta5" value="Parcialmente de acuerdo">
-    <label for="p5-op2">Parcialmente de acuerdo</label><br>
-    <input type="radio" id="p5-op3" name="pregunta5" value="Neutral">
-    <label for="p5-op3">Neutral</label><br>
-    <input type="radio" id="p5-op4" name="pregunta5" value="Parcialmente en desacuerdo">
-    <label for="p5-op4">Parcialmente en desacuerdo</label><br>
-    <input type="radio" id="p5-op5" name="pregunta5" value="En desacuerdo">
-    <label for="p5-op5">En desacuerdo</label><br><br>
-    <p>¿Los tiempos asignados a cada tema son adecuados para su comprensión?</p>
-    <input type="radio" id="p6-op1" name="pregunta6" value="De acuerdo" required>
-    <label for="p6-op1">De acuerdo</label><br>
-    <input type="radio" id="p6-op2" name="pregunta6" value="Parcialmente de acuerdo">
-    <label for="p6-op2">Parcialmente de acuerdo</label><br>
-    <input type="radio" id="p6-op3" name="pregunta6" value="Neutral">
-    <label for="p6-op3">Neutral</label><br>
-    <input type="radio" id="p6-op4" name="pregunta6" value="Parcialmente en desacuerdo">
-    <label for="p6-op4">Parcialmente en desacuerdo</label><br>
-    <input type="radio" id="p6-op5" name="pregunta6" value="En desacuerdo">
-    <label for="p6-op5">En desacuerdo</label><br><br>
-    <p>¿El entorno de aprendizaje (aula, laboratorio, plataforma virtual) es adecuado para el desarrollo del curso?</p>
-    <input type="radio" id="p7-op1" name="pregunta7" value="De acuerdo" required>
-    <label for="p7-op1">De acuerdo</label><br>
-    <input type="radio" id="p7-op2" name="pregunta7" value="Parcialmente de acuerdo">
-    <label for="p7-op2">Parcialmente de acuerdo</label><br>
-    <input type="radio" id="p7-op3" name="pregunta7" value="Neutral">
-    <label for="p7-op3">Neutral</label><br>
-    <input type="radio" id="p7-op4" name="pregunta7" value="Parcialmente en desacuerdo">
-    <label for="p7-op4">Parcialmente en desacuerdo</label><br>
-    <input type="radio" id="p7-op5" name="pregunta7" value="En desacuerdo">
-    <label for="p7-op5">En desacuerdo</label><br><br>
-    <p>¿Te sientes cómodo/a expresando tus ideas y opiniones en clase?</p>
-    <input type="radio" id="p8-op1" name="pregunta8" value="De acuerdo" required>
-    <label for="p8-op1">De acuerdo</label><br>
-    <input type="radio" id="p8-op2" name="pregunta8" value="Parcialmente de acuerdo">
-    <label for="p8-op2">Parcialmente de acuerdo</label><br>
-    <input type="radio" id="p8-op3" name="pregunta8" value="Neutral">
-    <label for="p8-op3">Neutral</label><br>
-    <input type="radio" id="p8-op4" name="pregunta8" value="Parcialmente en desacuerdo">
-    <label for="p8-op4">Parcialmente en desacuerdo</label><br>
-    <input type="radio" id="p8-op5" name="pregunta8" value="En desacuerdo">
-    <label for="p8-op5">En desacuerdo</label><br><br>
-    <p>¿Se fomenta la participación de los estudiantes durante las sesiones?</p>
-    <input type="radio" id="p9-op1" name="pregunta9" value="De acuerdo" required>
-    <label for="p9-op1">De acuerdo</label><br>
-    <input type="radio" id="p9-op2" name="pregunta9" value="Parcialmente de acuerdo">
-    <label for="p9-op2">Parcialmente de acuerdo</label><br>
-    <input type="radio" id="p9-op3" name="pregunta9" value="Neutral">
-    <label for="p9-op3">Neutral</label><br>
-    <input type="radio" id="p9-op4" name="pregunta9" value="Parcialmente en desacuerdo">
-    <label for="p9-op4">Parcialmente en desacuerdo</label><br>
-    <input type="radio" id="p9-op5" name="pregunta9" value="En desacuerdo">
-    <label for="p9-op5">En desacuerdo</label><br><br>
-    <p>¿El docente utiliza diferentes estrategias para facilitar el aprendizaje?</p>
-    <input type="radio" id="p10-op1" name="pregunta10" value="De acuerdo" required>
-    <label for="p10-op1">De acuerdo</label><br>
-    <input type="radio" id="p10-op2" name="pregunta10" value="Parcialmente de acuerdo">
-    <label for="p10-op2">Parcialmente de acuerdo</label><br>
-    <input type="radio" id="p10-op3" name="pregunta10" value="Neutral">
-    <label for="p10-op3">Neutral</label><br>
-    <input type="radio" id="p10-op4" name="pregunta10" value="Parcialmente en desacuerdo">
-    <label for="p10-op4">Parcialmente en desacuerdo</label><br>
-    <input type="radio" id="p10-op5" name="pregunta10" value="En desacuerdo">
-    <label for="p10-op5">En desacuerdo</label><br><br>
-    <p>¿Las actividades realizadas en clase favorecen la comprensión de los temas?</p>
-    <input type="radio" id="p11-op1" name="pregunta11" value="De acuerdo" required>
-    <label for="p11-op1">De acuerdo</label><br>
-    <input type="radio" id="p11-op2" name="pregunta11" value="Parcialmente de acuerdo">
-    <label for="p11-op2">Parcialmente de acuerdo</label><br>
-    <input type="radio" id="p11-op3" name="pregunta11" value="Neutral">
-    <label for="p11-op3">Neutral</label><br>
-    <input type="radio" id="p11-op4" name="pregunta11" value="Parcialmente en desacuerdo">
-    <label for="p11-op4">Parcialmente en desacuerdo</label><br>
-    <input type="radio" id="p11-op5" name="pregunta11" value="En desacuerdo">
-    <label for="p11-op5">En desacuerdo</label><br><br>
-    <p>¿El curso incluye actividades prácticas que refuercen el aprendizaje teórico?</p>
-    <input type="radio" id="p12-op1" name="pregunta12" value="De acuerdo" required>
-    <label for="p12-op1">De acuerdo</label><br>
-    <input type="radio" id="p12-op2" name="pregunta12" value="Parcialmente de acuerdo">
-    <label for="p12-op2">Parcialmente de acuerdo</label><br>
-    <input type="radio" id="p12-op3" name="pregunta12" value="Neutral">
-    <label for="p12-op3">Neutral</label><br>
-    <input type="radio" id="p12-op4" name="pregunta12" value="Parcialmente en desacuerdo">
-    <label for="p12-op4">Parcialmente en desacuerdo</label><br>
-    <input type="radio" id="p12-op5" name="pregunta12" value="En desacuerdo">
-    <label for="p12-op5">En desacuerdo</label><br><br>
-    <p>¿Te sientes motivado/a a participar en las actividades del curso?</p>
-    <input type="radio" id="p13-op1" name="pregunta13" value="De acuerdo" required>
-    <label for="p13-op1">De acuerdo</label><br>
-    <input type="radio" id="p13-op2" name="pregunta13" value="Parcialmente de acuerdo">
-    <label for="p13-op2">Parcialmente de acuerdo</label><br>
-    <input type="radio" id="p13-op3" name="pregunta13" value="Neutral">
-    <label for="p13-op3">Neutral</label><br>
-    <input type="radio" id="p13-op4" name="pregunta13" value="Parcialmente en desacuerdo">
-    <label for="p13-op4">Parcialmente en desacuerdo</label><br>
-    <input type="radio" id="p13-op5" name="pregunta13" value="En desacuerdo">
-    <label for="p13-op5">En desacuerdo</label><br><br>
-    <p>¿El docente transmite entusiasmo por la materia?</p>
-    <input type="radio" id="p14-op1" name="pregunta14" value="De acuerdo" required>
-    <label for="p14-op1">De acuerdo</label><br>
-    <input type="radio" id="p14-op2" name="pregunta14" value="Parcialmente de acuerdo">
-    <label for="p14-op2">Parcialmente de acuerdo</label><br>
-    <input type="radio" id="p14-op3" name="pregunta14" value="Neutral">
-    <label for="p14-op3">Neutral</label><br>
-    <input type="radio" id="p14-op4" name="pregunta14" value="Parcialmente en desacuerdo">
-    <label for="p14-op4">Parcialmente en desacuerdo</label><br>
-    <input type="radio" id="p14-op5" name="pregunta14" value="En desacuerdo">
-    <label for="p14-op5">En desacuerdo</label><br><br>
-    <p>¿Consideras que los temas del curso son interesantes y aplicables a la vida real?</p>
-    <input type="radio" id="p15-op1" name="pregunta15" value="De acuerdo" required>
-    <label for="p15-op1">De acuerdo</label><br>
-    <input type="radio" id="p15-op2" name="pregunta15" value="Parcialmente de acuerdo">
-    <label for="p15-op2">Parcialmente de acuerdo</label><br>
-    <input type="radio" id="p15-op3" name="pregunta15" value="Neutral">
-    <label for="p15-op3">Neutral</label><br>
-    <input type="radio" id="p15-op4" name="pregunta15" value="Parcialmente en desacuerdo">
-    <label for="p15-op4">Parcialmente en desacuerdo</label><br>
-    <input type="radio" id="p15-op5" name="pregunta15" value="En desacuerdo">
-    <label for="p15-op5">En desacuerdo</label><br><br>
-    <p>¿Los criterios de evaluación son claros desde el inicio del curso?</p>
-    <input type="radio" id="p16-op1" name="pregunta16" value="De acuerdo" required>
-    <label for="p16-op1">De acuerdo</label><br>
-    <input type="radio" id="p16-op2" name="pregunta16" value="Parcialmente de acuerdo">
-    <label for="p16-op2">Parcialmente de acuerdo</label><br>
-    <input type="radio" id="p16-op3" name="pregunta16" value="Neutral">
-    <label for="p16-op3">Neutral</label><br>
-    <input type="radio" id="p16-op4" name="pregunta16" value="Parcialmente en desacuerdo">
-    <label for="p16-op4">Parcialmente en desacuerdo</label><br>
-    <input type="radio" id="p16-op5" name="pregunta16" value="En desacuerdo">
-    <label for="p16-op5">En desacuerdo</label><br><br>
-    <p>¿Los exámenes y trabajos reflejan adecuadamente lo aprendido en clase?</p>
-    <input type="radio" id="p17-op1" name="pregunta17" value="De acuerdo" required>
-    <label for="p17-op1">De acuerdo</label><br>
-    <input type="radio" id="p17-op2" name="pregunta17" value="Parcialmente de acuerdo">
-    <label for="p17-op2">Parcialmente de acuerdo</label><br>
-    <input type="radio" id="p17-op3" name="pregunta17" value="Neutral">
-    <label for="p17-op3">Neutral</label><br>
-    <input type="radio" id="p17-op4" name="pregunta17" value="Parcialmente en desacuerdo">
-    <label for="p17-op4">Parcialmente en desacuerdo</label><br>
-    <input type="radio" id="p17-op5" name="pregunta17" value="En desacuerdo">
-    <label for="p17-op5">En desacuerdo</label><br><br>
-    <p>¿Recibes retroalimentación sobre tu desempeño académico?</p>
-    <input type="radio" id="p18-op1" name="pregunta18" value="De acuerdo" required>
-    <label for="p18-op1">De acuerdo</label><br>
-    <input type="radio" id="p18-op2" name="pregunta18" value="Parcialmente de acuerdo">
-    <label for="p18-op2">Parcialmente de acuerdo</label><br>
-    <input type="radio" id="p18-op3" name="pregunta18" value="Neutral">
-    <label for="p18-op3">Neutral</label><br>
-    <input type="radio" id="p18-op4" name="pregunta18" value="Parcialmente en desacuerdo">
-    <label for="p18-op4">Parcialmente en desacuerdo</label><br>
-    <input type="radio" id="p18-op5" name="pregunta18" value="En desacuerdo">
-    <label for="p18-op5">En desacuerdo</label><br><br>
-    <p>¿El docente está disponible para resolver dudas fuera del horario de clase?</p>
-    <input type="radio" id="p19-op1" name="pregunta19" value="De acuerdo" required>
-    <label for="p19-op1">De acuerdo</label><br>
-    <input type="radio" id="p19-op2" name="pregunta19" value="Parcialmente de acuerdo">
-    <label for="p19-op2">Parcialmente de acuerdo</label><br>
-    <input type="radio" id="p19-op3" name="pregunta19" value="Neutral">
-    <label for="p19-op3">Neutral</label><br>
-    <input type="radio" id="p19-op4" name="pregunta19" value="Parcialmente en desacuerdo">
-    <label for="p19-op4">Parcialmente en desacuerdo</label><br>
-    <input type="radio" id="p19-op5" name="pregunta19" value="En desacuerdo">
-    <label for="p19-op5">En desacuerdo</label><br><br>
-    <p>¿La comunicación entre docente y alumnos es clara y efectiva?</p>
-    <input type="radio" id="p20-op1" name="pregunta20" value="De acuerdo" required>
-    <label for="p20-op1">De acuerdo</label><br>
-    <input type="radio" id="p20-op2" name="pregunta20" value="Parcialmente de acuerdo">
-    <label for="p20-op2">Parcialmente de acuerdo</label><br>
-    <input type="radio" id="p20-op3" name="pregunta20" value="Neutral">
-    <label for="p20-op3">Neutral</label><br>
-    <input type="radio" id="p20-op4" name="pregunta20" value="Parcialmente en desacuerdo">
-    <label for="p20-op4">Parcialmente en desacuerdo</label><br>
-    <input type="radio" id="p20-op5" name="pregunta20" value="En desacuerdo">
-    <label for="p20-op5">En desacuerdo</label><br><br>
-    <p>¿Se promueve el debate y la discusión sobre los temas del curso?</p>
-    <input type="radio" id="p21-op1" name="pregunta21" value="De acuerdo" required>
-    <label for="p21-op1">De acuerdo</label><br>
-    <input type="radio" id="p21-op2" name="pregunta21" value="Parcialmente de acuerdo">
-    <label for="p21-op2">Parcialmente de acuerdo</label><br>
-    <input type="radio" id="p21-op3" name="pregunta21" value="Neutral">
-    <label for="p21-op3">Neutral</label><br>
-    <input type="radio" id="p21-op4" name="pregunta21" value="Parcialmente en desacuerdo">
-    <label for="p21-op4">Parcialmente en desacuerdo</label><br>
-    <input type="radio" id="p21-op5" name="pregunta21" value="En desacuerdo">
-    <label for="p21-op5">En desacuerdo</label><br><br>
-    <p>¿El docente maneja adecuadamente los tiempos de clase?</p>
-    <input type="radio" id="p22-op1" name="pregunta22" value="De acuerdo" required>
-    <label for="p22-op1">De acuerdo</label><br>
-    <input type="radio" id="p22-op2" name="pregunta22" value="Parcialmente de acuerdo">
-    <label for="p22-op2">Parcialmente de acuerdo</label><br>
-    <input type="radio" id="p22-op3" name="pregunta22" value="Neutral">
-    <label for="p22-op3">Neutral</label><br>
-    <input type="radio" id="p22-op4" name="pregunta22" value="Parcialmente en desacuerdo">
-    <label for="p22-op4">Parcialmente en desacuerdo</label><br>
-    <input type="radio" id="p22-op5" name="pregunta22" value="En desacuerdo">
-    <label for="p22-op5">En desacuerdo</label><br><br>
-    <p>¿Se cumplen los horarios establecidos para las sesiones?</p>
-    <input type="radio" id="p23-op1" name="pregunta23" value="De acuerdo" required>
-    <label for="p23-op1">De acuerdo</label><br>
-    <input type="radio" id="p23-op2" name="pregunta23" value="Parcialmente de acuerdo">
-    <label for="p23-op2">Parcialmente de acuerdo</label><br>
-    <input type="radio" id="p23-op3" name="pregunta23" value="Neutral">
-    <label for="p23-op3">Neutral</label><br>
-    <input type="radio" id="p23-op4" name="pregunta23" value="Parcialmente en desacuerdo">
-    <label for="p23-op4">Parcialmente en desacuerdo</label><br>
-    <input type="radio" id="p23-op5" name="pregunta23" value="En desacuerdo">
-    <label for="p23-op5">En desacuerdo</label><br><br>
-    <p>¿Las actividades y tareas están bien organizadas y alineadas con los objetivos del curso?</p>
-    <input type="radio" id="p24-op1" name="pregunta24" value="De acuerdo" required>
-    <label for="p24-op1">De acuerdo</label><br>
-    <input type="radio" id="p24-op2" name="pregunta24" value="Parcialmente de acuerdo">
-    <label for="p24-op2">Parcialmente de acuerdo</label><br>
-    <input type="radio" id="p24-op3" name="pregunta24" value="Neutral">
-    <label for="p24-op3">Neutral</label><br>
-    <input type="radio" id="p24-op4" name="pregunta24" value="Parcialmente en desacuerdo">
-    <label for="p24-op4">Parcialmente en desacuerdo</label><br>
-    <input type="radio" id="p24-op5" name="pregunta24" value="En desacuerdo">
-    <label for="p24-op5">En desacuerdo</label><br><br>
-    <p>¿Se utilizan herramientas tecnológicas que facilitan el aprendizaje?</p>
-    <input type="radio" id="p25-op1" name="pregunta25" value="De acuerdo" required>
-    <label for="p25-op1">De acuerdo</label><br>
-    <input type="radio" id="p25-op2" name="pregunta25" value="Parcialmente de acuerdo">
-    <label for="p25-op2">Parcialmente de acuerdo</label><br>
-    <input type="radio" id="p25-op3" name="pregunta25" value="Neutral">
-    <label for="p25-op3">Neutral</label><br>
-    <input type="radio" id="p25-op4" name="pregunta25" value="Parcialmente en desacuerdo">
-    <label for="p25-op4">Parcialmente en desacuerdo</label><br>
-    <input type="radio" id="p25-op5" name="pregunta25" value="En desacuerdo">
-    <label for="p25-op5">En desacuerdo</label><br><br>
-    <p>¿Los materiales digitales proporcionados son accesibles y útiles?</p>
-    <input type="radio" id="p26-op1" name="pregunta26" value="De acuerdo" required>
-    <label for="p26-op1">De acuerdo</label><br>
-    <input type="radio" id="p26-op2" name="pregunta26" value="Parcialmente de acuerdo">
-    <label for="p26-op2">Parcialmente de acuerdo</label><br>
-    <input type="radio" id="p26-op3" name="pregunta26" value="Neutral">
-    <label for="p26-op3">Neutral</label><br>
-    <input type="radio" id="p26-op4" name="pregunta26" value="Parcialmente en desacuerdo">
-    <label for="p26-op4">Parcialmente en desacuerdo</label><br>
-    <input type="radio" id="p26-op5" name="pregunta26" value="En desacuerdo">
-    <label for="p26-op5">En desacuerdo</label><br><br>
-    <p>¿Consideras que el uso de tecnología en el curso mejora tu aprendizaje?</p>
-    <input type="radio" id="p27-op1" name="pregunta27" value="De acuerdo" required>
-    <label for="p27-op1">De acuerdo</label><br>
-    <input type="radio" id="p27-op2" name="pregunta27" value="Parcialmente de acuerdo">
-    <label for="p27-op2">Parcialmente de acuerdo</label><br>
-    <input type="radio" id="p27-op3" name="pregunta27" value="Neutral">
-    <label for="p27-op3">Neutral</label><br>
-    <input type="radio" id="p27-op4" name="pregunta27" value="Parcialmente en desacuerdo">
-    <label for="p27-op4">Parcialmente en desacuerdo</label><br>
-    <input type="radio" id="p27-op5" name="pregunta27" value="En desacuerdo">
-    <label for="p27-op5">En desacuerdo</label><br><br>
-    <p>¿El curso cumplió con tus expectativas?</p>
-    <input type="radio" id="p28-op1" name="pregunta28" value="De acuerdo" required>
-    <label for="p28-op1">De acuerdo</label><br>
-    <input type="radio" id="p28-op2" name="pregunta28" value="Parcialmente de acuerdo">
-    <label for="p28-op2">Parcialmente de acuerdo</label><br>
-    <input type="radio" id="p28-op3" name="pregunta28" value="Neutral">
-    <label for="p28-op3">Neutral</label><br>
-    <input type="radio" id="p28-op4" name="pregunta28" value="Parcialmente en desacuerdo">
-    <label for="p28-op4">Parcialmente en desacuerdo</label><br>
-    <input type="radio" id="p28-op5" name="pregunta28" value="En desacuerdo">
-    <label for="p28-op5">En desacuerdo</label><br><br>
-    <p>¿Recomendarías este curso a otros estudiantes?</p>
-    <input type="radio" id="p29-op1" name="pregunta29" value="De acuerdo" required>
-    <label for="p29-op1">De acuerdo</label><br>
-    <input type="radio" id="p29-op2" name="pregunta29" value="Parcialmente de acuerdo">
-    <label for="p29-op2">Parcialmente de acuerdo</label><br>
-    <input type="radio" id="p29-op3" name="pregunta29" value="Neutral">
-    <label for="p29-op3">Neutral</label><br>
-    <input type="radio" id="p29-op4" name="pregunta29" value="Parcialmente en desacuerdo">
-    <label for="p29-op4">Parcialmente en desacuerdo</label><br>
-    <input type="radio" id="p29-op5" name="pregunta29" value="En desacuerdo">
-    <label for="p29-op5">En desacuerdo</label><br><br>
-    <p>¿Qué sugerencias darías para mejorar la enseñanza en este curso?</p>
-    <input type="radio" id="p30-op1" name="pregunta30" value="De acuerdo" required>
-    <label for="p30-op1">De acuerdo</label><br>
-    <input type="radio" id="p30-op2" name="pregunta30" value="Parcialmente de acuerdo">
-    <label for="p30-op2">Parcialmente de acuerdo</label><br>
-    <input type="radio" id="p30-op3" name="pregunta30" value="Neutral">
-    <label for="p30-op3">Neutral</label><br>
-    <input type="radio" id="p30-op4" name="pregunta30" value="Parcialmente en desacuerdo">
-    <label for="p30-op4">Parcialmente en desacuerdo</label><br>
-    <input type="radio" id="p30-op5" name="pregunta30" value="En desacuerdo">
-    <label for="p30-op5">En desacuerdo</label><br><br>
-  </form>
+    <h1 id="eval-title">Evaluación Docente</h1> 
+    <div id="disclaimer">Esta evaluación es confidencial y anónima, su único fin es mejorar la calidad educativa. No tendrá
+      repercusiones negativas para ninguna de las partes.</div>
+  <div id="contenedor-formulario">
+    <form id="form_evaluacion" action="guardar_evaluacion.php" method="POST">
+      <p>1.- ¿Consideras que el docente demuestra un buen conocimiento sobre la materia que imparte?</p>
+      <input type="radio" id="p1-op1" name="pregunta1" value="De acuerdo" required>
+      <label for="p1-op1">De acuerdo</label><br>
+      <input type="radio" id="p1-op2" name="pregunta1" value="Parcialmente de acuerdo">
+      <label for="p1-op2">Parcialmente de acuerdo</label><br>
+      <input type="radio" id="p1-op3" name="pregunta1" value="Neutral">
+      <label for="p1-op3">Neutral</label><br>
+      <input type="radio" id="p1-op4" name="pregunta1" value="Parcialmente en desacuerdo">
+      <label for="p1-op4">Parcialmente en desacuerdo</label><br>
+      <input type="radio" id="p1-op5" name="pregunta1" value="En desacuerdo">
+      <label for="p1-op5">En desacuerdo</label><br><br>
+      <p>2.- ¿El contenido del curso es actualizado y relevante para tu formación?</p>
+      <input type="radio" id="p2-op1" name="pregunta2" value="De acuerdo" required>
+      <label for="p2-op1">De acuerdo</label><br>
+      <input type="radio" id="p2-op2" name="pregunta2" value="Parcialmente de acuerdo">
+      <label for="p2-op2">Parcialmente de acuerdo</label><br>
+      <input type="radio" id="p2-op3" name="pregunta2" value="Neutral">
+      <label for="p2-op3">Neutral</label><br>
+      <input type="radio" id="p2-op4" name="pregunta2" value="Parcialmente en desacuerdo">
+      <label for="p2-op4">Parcialmente en desacuerdo</label><br>
+      <input type="radio" id="p2-op5" name="pregunta2" value="En desacuerdo">
+      <label for="p2-op5">En desacuerdo</label><br><br>
+      <p>3.- ¿El docente explica los temas de manera clara y comprensible?</p>
+      <input type="radio" id="p3-op1" name="pregunta3" value="De acuerdo" required>
+      <label for="p3-op1">De acuerdo</label><br>
+      <input type="radio" id="p3-op2" name="pregunta3" value="Parcialmente de acuerdo">
+      <label for="p3-op2">Parcialmente de acuerdo</label><br>
+      <input type="radio" id="p3-op3" name="pregunta3" value="Neutral">
+      <label for="p3-op3">Neutral</label><br>
+      <input type="radio" id="p3-op4" name="pregunta3" value="Parcialmente en desacuerdo">
+      <label for="p3-op4">Parcialmente en desacuerdo</label><br>
+      <input type="radio" id="p3-op5" name="pregunta3" value="En desacuerdo">
+      <label for="p3-op5">En desacuerdo</label><br><br>
+      <p>4.- ¿Se presentan los objetivos del curso de manera clara al inicio?</p>
+      <input type="radio" id="p4-op1" name="pregunta4" value="De acuerdo" required>
+      <label for="p4-op1">De acuerdo</label><br>
+      <input type="radio" id="p4-op2" name="pregunta4" value="Parcialmente de acuerdo">
+      <label for="p4-op2">Parcialmente de acuerdo</label><br>
+      <input type="radio" id="p4-op3" name="pregunta4" value="Neutral">
+      <label for="p4-op3">Neutral</label><br>
+      <input type="radio" id="p4-op4" name="pregunta4" value="Parcialmente en desacuerdo">
+      <label for="p4-op4">Parcialmente en desacuerdo</label><br>
+      <input type="radio" id="p4-op5" name="pregunta4" value="En desacuerdo">
+      <label for="p4-op5">En desacuerdo</label><br><br>
+      <p>5.- ¿Los temas del curso se desarrollan en un orden lógico y estructurado?</p>
+      <input type="radio" id="p5-op1" name="pregunta5" value="De acuerdo" required>
+      <label for="p5-op1">De acuerdo</label><br>
+      <input type="radio" id="p5-op2" name="pregunta5" value="Parcialmente de acuerdo">
+      <label for="p5-op2">Parcialmente de acuerdo</label><br>
+      <input type="radio" id="p5-op3" name="pregunta5" value="Neutral">
+      <label for="p5-op3">Neutral</label><br>
+      <input type="radio" id="p5-op4" name="pregunta5" value="Parcialmente en desacuerdo">
+      <label for="p5-op4">Parcialmente en desacuerdo</label><br>
+      <input type="radio" id="p5-op5" name="pregunta5" value="En desacuerdo">
+      <label for="p5-op5">En desacuerdo</label><br><br>
+      <p>6.- ¿Los tiempos asignados a cada tema son adecuados para su comprensión?</p>
+      <input type="radio" id="p6-op1" name="pregunta6" value="De acuerdo" required>
+      <label for="p6-op1">De acuerdo</label><br>
+      <input type="radio" id="p6-op2" name="pregunta6" value="Parcialmente de acuerdo">
+      <label for="p6-op2">Parcialmente de acuerdo</label><br>
+      <input type="radio" id="p6-op3" name="pregunta6" value="Neutral">
+      <label for="p6-op3">Neutral</label><br>
+      <input type="radio" id="p6-op4" name="pregunta6" value="Parcialmente en desacuerdo">
+      <label for="p6-op4">Parcialmente en desacuerdo</label><br>
+      <input type="radio" id="p6-op5" name="pregunta6" value="En desacuerdo">
+      <label for="p6-op5">En desacuerdo</label><br><br>
+      <p>7.- ¿El entorno de aprendizaje (aula, laboratorio, plataforma virtual) es adecuado para el desarrollo del curso?</p>
+      <input type="radio" id="p7-op1" name="pregunta7" value="De acuerdo" required>
+      <label for="p7-op1">De acuerdo</label><br>
+      <input type="radio" id="p7-op2" name="pregunta7" value="Parcialmente de acuerdo">
+      <label for="p7-op2">Parcialmente de acuerdo</label><br>
+      <input type="radio" id="p7-op3" name="pregunta7" value="Neutral">
+      <label for="p7-op3">Neutral</label><br>
+      <input type="radio" id="p7-op4" name="pregunta7" value="Parcialmente en desacuerdo">
+      <label for="p7-op4">Parcialmente en desacuerdo</label><br>
+      <input type="radio" id="p7-op5" name="pregunta7" value="En desacuerdo">
+      <label for="p7-op5">En desacuerdo</label><br><br>
+      <p>8.- ¿Te sientes cómodo/a expresando tus ideas y opiniones en clase?</p>
+      <input type="radio" id="p8-op1" name="pregunta8" value="De acuerdo" required>
+      <label for="p8-op1">De acuerdo</label><br>
+      <input type="radio" id="p8-op2" name="pregunta8" value="Parcialmente de acuerdo">
+      <label for="p8-op2">Parcialmente de acuerdo</label><br>
+      <input type="radio" id="p8-op3" name="pregunta8" value="Neutral">
+      <label for="p8-op3">Neutral</label><br>
+      <input type="radio" id="p8-op4" name="pregunta8" value="Parcialmente en desacuerdo">
+      <label for="p8-op4">Parcialmente en desacuerdo</label><br>
+      <input type="radio" id="p8-op5" name="pregunta8" value="En desacuerdo">
+      <label for="p8-op5">En desacuerdo</label><br><br>
+      <p>9.- ¿Se fomenta la participación de los estudiantes durante las sesiones?</p>
+      <input type="radio" id="p9-op1" name="pregunta9" value="De acuerdo" required>
+      <label for="p9-op1">De acuerdo</label><br>
+      <input type="radio" id="p9-op2" name="pregunta9" value="Parcialmente de acuerdo">
+      <label for="p9-op2">Parcialmente de acuerdo</label><br>
+      <input type="radio" id="p9-op3" name="pregunta9" value="Neutral">
+      <label for="p9-op3">Neutral</label><br>
+      <input type="radio" id="p9-op4" name="pregunta9" value="Parcialmente en desacuerdo">
+      <label for="p9-op4">Parcialmente en desacuerdo</label><br>
+      <input type="radio" id="p9-op5" name="pregunta9" value="En desacuerdo">
+      <label for="p9-op5">En desacuerdo</label><br><br>
+      <p>10.- ¿El docente utiliza diferentes estrategias para facilitar el aprendizaje?</p>
+      <input type="radio" id="p10-op1" name="pregunta10" value="De acuerdo" required>
+      <label for="p10-op1">De acuerdo</label><br>
+      <input type="radio" id="p10-op2" name="pregunta10" value="Parcialmente de acuerdo">
+      <label for="p10-op2">Parcialmente de acuerdo</label><br>
+      <input type="radio" id="p10-op3" name="pregunta10" value="Neutral">
+      <label for="p10-op3">Neutral</label><br>
+      <input type="radio" id="p10-op4" name="pregunta10" value="Parcialmente en desacuerdo">
+      <label for="p10-op4">Parcialmente en desacuerdo</label><br>
+      <input type="radio" id="p10-op5" name="pregunta10" value="En desacuerdo">
+      <label for="p10-op5">En desacuerdo</label><br><br>
+      <p>11.- ¿Las actividades realizadas en clase favorecen la comprensión de los temas?</p>
+      <input type="radio" id="p11-op1" name="pregunta11" value="De acuerdo" required>
+      <label for="p11-op1">De acuerdo</label><br>
+      <input type="radio" id="p11-op2" name="pregunta11" value="Parcialmente de acuerdo">
+      <label for="p11-op2">Parcialmente de acuerdo</label><br>
+      <input type="radio" id="p11-op3" name="pregunta11" value="Neutral">
+      <label for="p11-op3">Neutral</label><br>
+      <input type="radio" id="p11-op4" name="pregunta11" value="Parcialmente en desacuerdo">
+      <label for="p11-op4">Parcialmente en desacuerdo</label><br>
+      <input type="radio" id="p11-op5" name="pregunta11" value="En desacuerdo">
+      <label for="p11-op5">En desacuerdo</label><br><br>
+      <p>12.- ¿El curso incluye actividades prácticas que refuercen el aprendizaje teórico?</p>
+      <input type="radio" id="p12-op1" name="pregunta12" value="De acuerdo" required>
+      <label for="p12-op1">De acuerdo</label><br>
+      <input type="radio" id="p12-op2" name="pregunta12" value="Parcialmente de acuerdo">
+      <label for="p12-op2">Parcialmente de acuerdo</label><br>
+      <input type="radio" id="p12-op3" name="pregunta12" value="Neutral">
+      <label for="p12-op3">Neutral</label><br>
+      <input type="radio" id="p12-op4" name="pregunta12" value="Parcialmente en desacuerdo">
+      <label for="p12-op4">Parcialmente en desacuerdo</label><br>
+      <input type="radio" id="p12-op5" name="pregunta12" value="En desacuerdo">
+      <label for="p12-op5">En desacuerdo</label><br><br>
+      <p>13.- ¿Te sientes motivado/a a participar en las actividades del curso?</p>
+      <input type="radio" id="p13-op1" name="pregunta13" value="De acuerdo" required>
+      <label for="p13-op1">De acuerdo</label><br>
+      <input type="radio" id="p13-op2" name="pregunta13" value="Parcialmente de acuerdo">
+      <label for="p13-op2">Parcialmente de acuerdo</label><br>
+      <input type="radio" id="p13-op3" name="pregunta13" value="Neutral">
+      <label for="p13-op3">Neutral</label><br>
+      <input type="radio" id="p13-op4" name="pregunta13" value="Parcialmente en desacuerdo">
+      <label for="p13-op4">Parcialmente en desacuerdo</label><br>
+      <input type="radio" id="p13-op5" name="pregunta13" value="En desacuerdo">
+      <label for="p13-op5">En desacuerdo</label><br><br>
+      <p>14.- ¿El docente transmite entusiasmo por la materia?</p>
+      <input type="radio" id="p14-op1" name="pregunta14" value="De acuerdo" required>
+      <label for="p14-op1">De acuerdo</label><br>
+      <input type="radio" id="p14-op2" name="pregunta14" value="Parcialmente de acuerdo">
+      <label for="p14-op2">Parcialmente de acuerdo</label><br>
+      <input type="radio" id="p14-op3" name="pregunta14" value="Neutral">
+      <label for="p14-op3">Neutral</label><br>
+      <input type="radio" id="p14-op4" name="pregunta14" value="Parcialmente en desacuerdo">
+      <label for="p14-op4">Parcialmente en desacuerdo</label><br>
+      <input type="radio" id="p14-op5" name="pregunta14" value="En desacuerdo">
+      <label for="p14-op5">En desacuerdo</label><br><br>
+      <p>15.- ¿Consideras que los temas del curso son interesantes y aplicables a la vida real?</p>
+      <input type="radio" id="p15-op1" name="pregunta15" value="De acuerdo" required>
+      <label for="p15-op1">De acuerdo</label><br>
+      <input type="radio" id="p15-op2" name="pregunta15" value="Parcialmente de acuerdo">
+      <label for="p15-op2">Parcialmente de acuerdo</label><br>
+      <input type="radio" id="p15-op3" name="pregunta15" value="Neutral">
+      <label for="p15-op3">Neutral</label><br>
+      <input type="radio" id="p15-op4" name="pregunta15" value="Parcialmente en desacuerdo">
+      <label for="p15-op4">Parcialmente en desacuerdo</label><br>
+      <input type="radio" id="p15-op5" name="pregunta15" value="En desacuerdo">
+      <label for="p15-op5">En desacuerdo</label><br><br>
+      <p>16.- ¿Los criterios de evaluación son claros desde el inicio del curso?</p>
+      <input type="radio" id="p16-op1" name="pregunta16" value="De acuerdo" required>
+      <label for="p16-op1">De acuerdo</label><br>
+      <input type="radio" id="p16-op2" name="pregunta16" value="Parcialmente de acuerdo">
+      <label for="p16-op2">Parcialmente de acuerdo</label><br>
+      <input type="radio" id="p16-op3" name="pregunta16" value="Neutral">
+      <label for="p16-op3">Neutral</label><br>
+      <input type="radio" id="p16-op4" name="pregunta16" value="Parcialmente en desacuerdo">
+      <label for="p16-op4">Parcialmente en desacuerdo</label><br>
+      <input type="radio" id="p16-op5" name="pregunta16" value="En desacuerdo">
+      <label for="p16-op5">En desacuerdo</label><br><br>
+      <p>17.- ¿Los exámenes y trabajos reflejan adecuadamente lo aprendido en clase?</p>
+      <input type="radio" id="p17-op1" name="pregunta17" value="De acuerdo" required>
+      <label for="p17-op1">De acuerdo</label><br>
+      <input type="radio" id="p17-op2" name="pregunta17" value="Parcialmente de acuerdo">
+      <label for="p17-op2">Parcialmente de acuerdo</label><br>
+      <input type="radio" id="p17-op3" name="pregunta17" value="Neutral">
+      <label for="p17-op3">Neutral</label><br>
+      <input type="radio" id="p17-op4" name="pregunta17" value="Parcialmente en desacuerdo">
+      <label for="p17-op4">Parcialmente en desacuerdo</label><br>
+      <input type="radio" id="p17-op5" name="pregunta17" value="En desacuerdo">
+      <label for="p17-op5">En desacuerdo</label><br><br>
+      <p>18.- ¿Recibes retroalimentación sobre tu desempeño académico?</p>
+      <input type="radio" id="p18-op1" name="pregunta18" value="De acuerdo" required>
+      <label for="p18-op1">De acuerdo</label><br>
+      <input type="radio" id="p18-op2" name="pregunta18" value="Parcialmente de acuerdo">
+      <label for="p18-op2">Parcialmente de acuerdo</label><br>
+      <input type="radio" id="p18-op3" name="pregunta18" value="Neutral">
+      <label for="p18-op3">Neutral</label><br>
+      <input type="radio" id="p18-op4" name="pregunta18" value="Parcialmente en desacuerdo">
+      <label for="p18-op4">Parcialmente en desacuerdo</label><br>
+      <input type="radio" id="p18-op5" name="pregunta18" value="En desacuerdo">
+      <label for="p18-op5">En desacuerdo</label><br><br>
+      <p>19.- ¿El docente está disponible para resolver dudas fuera del horario de clase?</p>
+      <input type="radio" id="p19-op1" name="pregunta19" value="De acuerdo" required>
+      <label for="p19-op1">De acuerdo</label><br>
+      <input type="radio" id="p19-op2" name="pregunta19" value="Parcialmente de acuerdo">
+      <label for="p19-op2">Parcialmente de acuerdo</label><br>
+      <input type="radio" id="p19-op3" name="pregunta19" value="Neutral">
+      <label for="p19-op3">Neutral</label><br>
+      <input type="radio" id="p19-op4" name="pregunta19" value="Parcialmente en desacuerdo">
+      <label for="p19-op4">Parcialmente en desacuerdo</label><br>
+      <input type="radio" id="p19-op5" name="pregunta19" value="En desacuerdo">
+      <label for="p19-op5">En desacuerdo</label><br><br>
+      <p>20.- ¿La comunicación entre docente y alumnos es clara y efectiva?</p>
+      <input type="radio" id="p20-op1" name="pregunta20" value="De acuerdo" required>
+      <label for="p20-op1">De acuerdo</label><br>
+      <input type="radio" id="p20-op2" name="pregunta20" value="Parcialmente de acuerdo">
+      <label for="p20-op2">Parcialmente de acuerdo</label><br>
+      <input type="radio" id="p20-op3" name="pregunta20" value="Neutral">
+      <label for="p20-op3">Neutral</label><br>
+      <input type="radio" id="p20-op4" name="pregunta20" value="Parcialmente en desacuerdo">
+      <label for="p20-op4">Parcialmente en desacuerdo</label><br>
+      <input type="radio" id="p20-op5" name="pregunta20" value="En desacuerdo">
+      <label for="p20-op5">En desacuerdo</label><br><br>
+      <p>21.- ¿Se promueve el debate y la discusión sobre los temas del curso?</p>
+      <input type="radio" id="p21-op1" name="pregunta21" value="De acuerdo" required>
+      <label for="p21-op1">De acuerdo</label><br>
+      <input type="radio" id="p21-op2" name="pregunta21" value="Parcialmente de acuerdo">
+      <label for="p21-op2">Parcialmente de acuerdo</label><br>
+      <input type="radio" id="p21-op3" name="pregunta21" value="Neutral">
+      <label for="p21-op3">Neutral</label><br>
+      <input type="radio" id="p21-op4" name="pregunta21" value="Parcialmente en desacuerdo">
+      <label for="p21-op4">Parcialmente en desacuerdo</label><br>
+      <input type="radio" id="p21-op5" name="pregunta21" value="En desacuerdo">
+      <label for="p21-op5">En desacuerdo</label><br><br>
+      <p>22.- ¿El docente maneja adecuadamente los tiempos de clase?</p>
+      <input type="radio" id="p22-op1" name="pregunta22" value="De acuerdo" required>
+      <label for="p22-op1">De acuerdo</label><br>
+      <input type="radio" id="p22-op2" name="pregunta22" value="Parcialmente de acuerdo">
+      <label for="p22-op2">Parcialmente de acuerdo</label><br>
+      <input type="radio" id="p22-op3" name="pregunta22" value="Neutral">
+      <label for="p22-op3">Neutral</label><br>
+      <input type="radio" id="p22-op4" name="pregunta22" value="Parcialmente en desacuerdo">
+      <label for="p22-op4">Parcialmente en desacuerdo</label><br>
+      <input type="radio" id="p22-op5" name="pregunta22" value="En desacuerdo">
+      <label for="p22-op5">En desacuerdo</label><br><br>
+      <p>23.- ¿Se cumplen los horarios establecidos para las sesiones?</p>
+      <input type="radio" id="p23-op1" name="pregunta23" value="De acuerdo" required>
+      <label for="p23-op1">De acuerdo</label><br>
+      <input type="radio" id="p23-op2" name="pregunta23" value="Parcialmente de acuerdo">
+      <label for="p23-op2">Parcialmente de acuerdo</label><br>
+      <input type="radio" id="p23-op3" name="pregunta23" value="Neutral">
+      <label for="p23-op3">Neutral</label><br>
+      <input type="radio" id="p23-op4" name="pregunta23" value="Parcialmente en desacuerdo">
+      <label for="p23-op4">Parcialmente en desacuerdo</label><br>
+      <input type="radio" id="p23-op5" name="pregunta23" value="En desacuerdo">
+      <label for="p23-op5">En desacuerdo</label><br><br>
+      <p>24.- ¿Las actividades y tareas están bien organizadas y alineadas con los objetivos del curso?</p>
+      <input type="radio" id="p24-op1" name="pregunta24" value="De acuerdo" required>
+      <label for="p24-op1">De acuerdo</label><br>
+      <input type="radio" id="p24-op2" name="pregunta24" value="Parcialmente de acuerdo">
+      <label for="p24-op2">Parcialmente de acuerdo</label><br>
+      <input type="radio" id="p24-op3" name="pregunta24" value="Neutral">
+      <label for="p24-op3">Neutral</label><br>
+      <input type="radio" id="p24-op4" name="pregunta24" value="Parcialmente en desacuerdo">
+      <label for="p24-op4">Parcialmente en desacuerdo</label><br>
+      <input type="radio" id="p24-op5" name="pregunta24" value="En desacuerdo">
+      <label for="p24-op5">En desacuerdo</label><br><br>
+      <p>25.- ¿Se utilizan herramientas tecnológicas que facilitan el aprendizaje?</p>
+      <input type="radio" id="p25-op1" name="pregunta25" value="De acuerdo" required>
+      <label for="p25-op1">De acuerdo</label><br>
+      <input type="radio" id="p25-op2" name="pregunta25" value="Parcialmente de acuerdo">
+      <label for="p25-op2">Parcialmente de acuerdo</label><br>
+      <input type="radio" id="p25-op3" name="pregunta25" value="Neutral">
+      <label for="p25-op3">Neutral</label><br>
+      <input type="radio" id="p25-op4" name="pregunta25" value="Parcialmente en desacuerdo">
+      <label for="p25-op4">Parcialmente en desacuerdo</label><br>
+      <input type="radio" id="p25-op5" name="pregunta25" value="En desacuerdo">
+      <label for="p25-op5">En desacuerdo</label><br><br>
+      <p>26.- ¿Los materiales digitales proporcionados son accesibles y útiles?</p>
+      <input type="radio" id="p26-op1" name="pregunta26" value="De acuerdo" required>
+      <label for="p26-op1">De acuerdo</label><br>
+      <input type="radio" id="p26-op2" name="pregunta26" value="Parcialmente de acuerdo">
+      <label for="p26-op2">Parcialmente de acuerdo</label><br>
+      <input type="radio" id="p26-op3" name="pregunta26" value="Neutral">
+      <label for="p26-op3">Neutral</label><br>
+      <input type="radio" id="p26-op4" name="pregunta26" value="Parcialmente en desacuerdo">
+      <label for="p26-op4">Parcialmente en desacuerdo</label><br>
+      <input type="radio" id="p26-op5" name="pregunta26" value="En desacuerdo">
+      <label for="p26-op5">En desacuerdo</label><br><br>
+      <p>27.- ¿Consideras que el uso de tecnología en el curso mejora tu aprendizaje?</p>
+      <input type="radio" id="p27-op1" name="pregunta27" value="De acuerdo" required>
+      <label for="p27-op1">De acuerdo</label><br>
+      <input type="radio" id="p27-op2" name="pregunta27" value="Parcialmente de acuerdo">
+      <label for="p27-op2">Parcialmente de acuerdo</label><br>
+      <input type="radio" id="p27-op3" name="pregunta27" value="Neutral">
+      <label for="p27-op3">Neutral</label><br>
+      <input type="radio" id="p27-op4" name="pregunta27" value="Parcialmente en desacuerdo">
+      <label for="p27-op4">Parcialmente en desacuerdo</label><br>
+      <input type="radio" id="p27-op5" name="pregunta27" value="En desacuerdo">
+      <label for="p27-op5">En desacuerdo</label><br><br>
+      <p>28.- ¿El curso cumplió con tus expectativas?</p>
+      <input type="radio" id="p28-op1" name="pregunta28" value="De acuerdo" required>
+      <label for="p28-op1">De acuerdo</label><br>
+      <input type="radio" id="p28-op2" name="pregunta28" value="Parcialmente de acuerdo">
+      <label for="p28-op2">Parcialmente de acuerdo</label><br>
+      <input type="radio" id="p28-op3" name="pregunta28" value="Neutral">
+      <label for="p28-op3">Neutral</label><br>
+      <input type="radio" id="p28-op4" name="pregunta28" value="Parcialmente en desacuerdo">
+      <label for="p28-op4">Parcialmente en desacuerdo</label><br>
+      <input type="radio" id="p28-op5" name="pregunta28" value="En desacuerdo">
+      <label for="p28-op5">En desacuerdo</label><br><br>
+      <p>29.- ¿Recomendarías este curso a otros estudiantes?</p>
+      <input type="radio" id="p29-op1" name="pregunta29" value="De acuerdo" required>
+      <label for="p29-op1">De acuerdo</label><br>
+      <input type="radio" id="p29-op2" name="pregunta29" value="Parcialmente de acuerdo">
+      <label for="p29-op2">Parcialmente de acuerdo</label><br>
+      <input type="radio" id="p29-op3" name="pregunta29" value="Neutral">
+      <label for="p29-op3">Neutral</label><br>
+      <input type="radio" id="p29-op4" name="pregunta29" value="Parcialmente en desacuerdo">
+      <label for="p29-op4">Parcialmente en desacuerdo</label><br>
+      <input type="radio" id="p29-op5" name="pregunta29" value="En desacuerdo">
+      <label for="p29-op5">En desacuerdo</label><br><br>
+      <p>30.- ¿Qué sugerencias darías para mejorar la enseñanza en este curso?</p>
+      <input type="radio" id="p30-op1" name="pregunta30" value="De acuerdo" required>
+      <label for="p30-op1">De acuerdo</label><br>
+      <input type="radio" id="p30-op2" name="pregunta30" value="Parcialmente de acuerdo">
+      <label for="p30-op2">Parcialmente de acuerdo</label><br>
+      <input type="radio" id="p30-op3" name="pregunta30" value="Neutral">
+      <label for="p30-op3">Neutral</label><br>
+      <input type="radio" id="p30-op4" name="pregunta30" value="Parcialmente en desacuerdo">
+      <label for="p30-op4">Parcialmente en desacuerdo</label><br>
+      <input type="radio" id="p30-op5" name="pregunta30" value="En desacuerdo">
+      <label for="p30-op5">En desacuerdo</label><br><br>
+      <button type="submit" id="finalizar_evaluacion">Finalizar evaluación</button>
+    </form>
+  </div>
 </body>
 
 </html>

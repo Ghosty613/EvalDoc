@@ -6,7 +6,7 @@
     <title>Seleccionar Docente</title>
     <link rel="stylesheet" href="styles.css" />
     <script src="scripts/navbar.js" defer></script>
-    <script src="scripts/cargarDocentes.js" defer></script>
+    <script src="scripts/obtenerDocentes.js" defer></script>
     <script src="scripts/verificar.js" defer></script>
 </head>
 
@@ -17,14 +17,16 @@
         actuales.
         <br>
         Una vez ingresado, puedes presionar el botón "Evaluar" al docente deseado y se mostrarán las preguntas
-        correspondientes. 
+        correspondientes.
     </div>
 
-    <div id="advertencia">⚠️ Advertencia ⚠️<br> Antes de presionar el botón de "Finalizar la evaluación docente" asegurate de haber realizado todas las evaluaciones correspondientes a tus materias en este periodo escolar</div>
+    <div id="advertencia">⚠️ Advertencia ⚠️<br> Antes de presionar el botón de "Finalizar la evaluación docente"
+        asegurate de haber realizado todas las evaluaciones correspondientes a tus materias en este periodo escolar
+    </div>
 
     <div class="tokenDocentes">
         <input type="text" id="tokenInput" placeholder="Ingresa tu token">
-        <button onclick="cargarDocentes()" id="buscarDocentes">Buscar Docentes</button>
+        <button onclick="obtenerDocentes()" id="buscarDocentes">Buscar Docentes</button>
 
         <table id="tablaDocentes">
             <thead>

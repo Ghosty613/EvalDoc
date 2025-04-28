@@ -24,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $stmt->bindParam(':username', $user);
         $stmt->bindParam(':password', $pass);
         $stmt->execute();
-
+        
         if ($stmt->rowCount() > 0) {
             $userData = $stmt->fetch(PDO::FETCH_ASSOC);
             echo json_encode([

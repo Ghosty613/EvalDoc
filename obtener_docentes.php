@@ -3,6 +3,19 @@ ini_set('display_errors', 1);
 error_reporting(E_ALL);
 header('Content-Type: application/json');
 
+$host = 'localhost';
+$dbname = 'eval_doc';
+$username = 'root';
+$password = 'estefy04';
+
+try {
+    $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $username, $password);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch (PDOException $e) {
+    echo json_encode(['success' => false, 'message' => 'Error al conectar con la base de datos: ' . $e->getMessage()]);
+    exit;
+}
+
 if (!isset($_GET['token'])) {
     http_response_code(400);
     echo json_encode(["error" => "Token no proporcionado."]);
@@ -11,19 +24,10 @@ if (!isset($_GET['token'])) {
 
 $token = $_GET['token'];
 
-try {
-    $pdo = new PDO("mysql:host=localhost;dbname=eval_doc;charset=utf8", "root", "estefy04");
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+$stmt = $pdo->prepare("SELECT nombre FROM docentes WHERE token = :token");
+$stmt->execute(['token' => $token]);
+$docentes = $stmt->fetchAll(PDO::FETCH_COLUMN);
 
-    $stmt = $pdo->prepare("SELECT nombre FROM docentes WHERE token = ?");
-    $stmt->execute([$token]);
-
-    $docentes = $stmt->fetchAll(PDO::FETCH_COLUMN); 
-
-    echo json_encode($docentes);
-} catch (PDOException $e) {
-    http_response_code(500);
-    echo json_encode(["error" => "Error en la base de datos: " . $e->getMessage()]);
-    exit;
-}
+echo json_encode($docentes);
+exit;
 ?>

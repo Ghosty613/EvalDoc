@@ -48,10 +48,10 @@ window.addEventListener('DOMContentLoaded', () => {
 
                     location.reload();
 
-                    // Redirigir al login si el registro es exitoso
-                    // if (data.success) {
-                    //     window.location.href = 'login.html';
-                    // }
+                    if (data.success) {
+                        alert('Registro existoso');
+                    }
+
                 } catch (error) {
                     alert('Error al conectar con el servidor.');
                     console.error(error);
