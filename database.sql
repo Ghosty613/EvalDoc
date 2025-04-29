@@ -17,15 +17,6 @@ CREATE TABLE docentes (
     token VARCHAR(50)
 );
 
-CREATE TABLE alumno_docente (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    alumno_id INT NOT NULL,
-    docente_id INT NOT NULL,
-    UNIQUE KEY (alumno_id, docente_id),
-    FOREIGN KEY (alumno_id) REFERENCES users(id),
-    FOREIGN KEY (docente_id) REFERENCES docentes(id)
-);
-
 CREATE TABLE evaluaciones (
     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     id_alumno INT NOT NULL,

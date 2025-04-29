@@ -35,7 +35,7 @@ try {
 
         $sql = "INSERT INTO users (email, usuario, password, tipo_usuario) VALUES (?, ?, ?, ?)";
         $stmt = $conn->prepare($sql);
-        $stmt->execute([$email, $user, password_hash($password, PASSWORD_DEFAULT), $tipo_usuario]);
+        $stmt->execute([$email, $user, $password, $tipo_usuario]);
 
         echo json_encode(['success' => true, 'message' => 'Usuario registrado exitosamente']);
         exit();

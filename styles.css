@@ -185,7 +185,7 @@ nav a:last-child {
 
 .middle-content {
   display: flex;
-  margin-left: -60%;
+  margin-left: -65%;
 }
 
 .dropdown-e {
@@ -634,6 +634,11 @@ nav a:last-child {
   border-color: transparent;
   width: 25%;
   height: 5vh;
+  cursor: pointer;
+}
+
+#finalizar:active {
+  background-color: rgb(216, 131, 131);
 }
 
 #advertencia {
