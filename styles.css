@@ -158,7 +158,7 @@ body {
   text-decoration: underline;
 }
 
-/*Main*/
+/*NavBar*/
 nav {
   background-color: #1b396b;
   text-decoration: none;
@@ -185,7 +185,7 @@ nav a:last-child {
 
 .middle-content {
   display: flex;
-  margin-left: -65%;
+  margin-left: -70%;
 }
 
 .dropdown-e {
@@ -288,6 +288,7 @@ nav a:last-child {
   height: auto;
 }
 
+/*Main*/
 .pageContainer {
   display: flex;
   flex-direction: column;
@@ -580,6 +581,12 @@ nav a:last-child {
   margin-top: 5%;
 }
 
+.tabla {
+  display:flex;
+  justify-content: center;
+  margin-top: 5vh ;
+}
+
 .tokenDocentes {
   display: flex;
   justify-content: center;
@@ -593,15 +600,16 @@ nav a:last-child {
 }
 
 #buscarDocentes {
-  background-color: #1b396b;
+  background-color: rgb(129, 46, 51);
   color: white;
   border: transparent;
   width: 18vh;
+  border-radius: 3vh;
 }
 
 #buscarDocentes:active {
   border: transparent;
-  background-color: #2980b9;
+  background-color: rgb(173, 88, 94)
 }
 
 #nombre-docente {
@@ -624,21 +632,38 @@ nav a:last-child {
 
 #contenedor-finalizar {
   display:flex;
-  justify-content: center;
+  justify-content: end;
   margin-top: 5%;
+}
+
+#imprimir {
+  color:white;
+  background-color: #2E8181;
+  border-color: transparent;
+  width: 10%;
+  height: 5vh;
+  cursor: pointer;
+  border-radius: 3vh;
+  margin: 2vh;
+}
+
+#imprimir:active {
+  background-color: #509999;
 }
 
 #finalizar {
   color:white;
-  background-color: rgb(226, 34, 34);
+  background-color: #b81868;
   border-color: transparent;
-  width: 25%;
+  width: 8%;
   height: 5vh;
   cursor: pointer;
+  border-radius: 3vh;
+  margin: 2vh;
 }
 
 #finalizar:active {
-  background-color: rgb(216, 131, 131);
+  background-color: #ce5e96;
 }
 
 #advertencia {

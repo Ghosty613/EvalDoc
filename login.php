@@ -14,6 +14,8 @@ try {
     exit;
 }
 
+session_start();
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $input = json_decode(file_get_contents('php://input'), true);
     $user = $input['usuario'] ?? '';
@@ -27,12 +29,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         
         if ($stmt->rowCount() > 0) {
             $userData = $stmt->fetch(PDO::FETCH_ASSOC);
+            
+            // Iniciar sesión y almacenar datos
+            $_SESSION['usuario'] = $userData['usuario'];
+            $_SESSION['tipo_usuario'] = $userData['tipo_usuario'];
+            
             echo json_encode([
                 'success' => true,
                 'message' => 'Inicio de sesión exitoso.',
                 'redirect' => 'main.html',
                 'nombre' => $userData['usuario'],
-                'tipo_usuario' => $userData['tipo_usuario']  
+                'tipo_usuario' => $userData['tipo_usuario']
             ]);
         } else {
             echo json_encode(['success' => false, 'message' => 'Usuario o contraseña incorrectos.']);

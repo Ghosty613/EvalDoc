@@ -8,14 +8,6 @@ function verificarEvaluacion() {
     }
 }
 
-function verificarImprimir(){
-    if (tipoUsuario === "alumno") {
-        window.location.href = "imprimir.html";
-    } else {
-        window.location.href = "acceso_denegado.html";
-    }
-}
-
 function verificarEstadisticas(){
     if (tipoUsuario === "alumno") {
         window.location.href = "estadisticas.html";

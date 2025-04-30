@@ -8,6 +8,7 @@
     <script src="scripts/navbar.js" defer></script>
     <script src="scripts/obtenerDocentes.js" defer></script>
     <script src="scripts/verificar.js" defer></script>
+    <script src="scripts/imprimir.js" defer></script>
 </head>
 
 <body>
@@ -27,7 +28,9 @@
     <div class="tokenDocentes">
         <input type="text" id="tokenInput" placeholder="Ingresa tu token">
         <button onclick="obtenerDocentes()" id="buscarDocentes">Buscar Docentes</button>
+    </div> 
 
+    <div class="tabla">
         <table id="tablaDocentes">
             <thead>
                 <tr>
@@ -37,7 +40,8 @@
         </table>
     </div>
     <div id="contenedor-finalizar">
-        <button onclick="location.href='main.html'" id="finalizar">Finalizar la evaluación docente</button>
+        <button onclick="location.href='main.html'" id="finalizar">Finalizar</button>
+        <button id="imprimir">Imprimir certificado</button>
     </div>
 </body>
 
