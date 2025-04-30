@@ -1,6 +1,5 @@
 CREATE DATABASE eval_doc;
 USE eval_doc;
-
 CREATE TABLE users (
     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     usuario VARCHAR(50) NOT NULL,
@@ -8,7 +7,6 @@ CREATE TABLE users (
     password VARCHAR(255) NOT NULL,
     tipo_usuario ENUM('alumno', 'docente', 'administrador') NOT NULL
 );
-
 -- token para el input en docentes.html
 CREATE TABLE docentes (
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -16,7 +14,6 @@ CREATE TABLE docentes (
     materia VARCHAR(255),
     token VARCHAR(50)
 );
-
 CREATE TABLE evaluaciones (
     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     id_alumno INT NOT NULL,
@@ -27,29 +24,23 @@ CREATE TABLE evaluaciones (
     FOREIGN KEY (id_alumno) REFERENCES users(id),
     FOREIGN KEY (id_docente) REFERENCES docentes(id)
 );
-
 --DROP TABLE users;
 --DROP TABLE evalacion;
 DROP TABLE docentes;
 DROP TABLE alumno_docente;
-
 SELECT *
 FROM users;
-
 SELECT *
 FROM docentes;
-
-SELECT * FROM periodos;
-
-SELECT * FROM alumno_docente;
-
-SELECT * FROM evaluaciones;
-
+SELECT *
+FROM periodos;
+SELECT *
+FROM alumno_docente;
+SELECT *
+FROM evaluaciones;
 TRUNCATE TABLE users;
-
 DELETE FROM users
 WHERE id > 0;
-
 INSERT INTO users (usuario, email, password, tipo_usuario)
 VALUES (
         'docente',
@@ -64,16 +55,23 @@ VALUES (
         'administrador'
     );
 
+INSERT INTO users (usuario, email, password, tipo_usuario)
+VALUES (
+        'Doria Gallegos Dora Emma',
+        'doraemma@itcv.com',
+        ')Vy?)308hh4J',
+        'docente'
+    );
+
 INSERT INTO docentes (nombre, materia, token)
 VALUES (
         'Doria Gallegos Dora Emma',
         'Ing. de Software',
         '>}dsJI@3ZwO4VD=A-0YP6hjDnqe&nt'
     );
-
 INSERT INTO docentes (nombre, materia, token)
 VALUES (
-    'Juan Pérez',
-    'Estructura de Datos',
-    'aB3@x!2KdR#7LpQ^uT0vZ9mEwY$'
-);
+        'Juan Pérez',
+        'Estructura de Datos',
+        'aB3@x!2KdR#7LpQ^uT0vZ9mEwY$'
+    );

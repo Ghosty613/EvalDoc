@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Estadísticas</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="scripts/navbar.js" defer></script>
+    <script src="scripts/verificar.js" defer></script>
+</head>
+
+<body>
+    <div id="navbar-placeholder"></div>
+
+    <div class="showStats">
+        <button id="ver-evaluaciones">Mostrar evaluaciones</button>
+    </div>
+    <script>
+        document.getElementById('ver-evaluaciones').addEventListener('click', () => {
+            const usuario = localStorage.getItem('nombreUsuario');
+            if (!usuario) {
+                alert('No se encontró el nombre del usuario.');
+                return;
+            }
+            window.location.href = `estadisticas_docente.php?usuario=${encodeURIComponent(usuario)}`;
+        });
+    </script>
+</body>
+
+</html>

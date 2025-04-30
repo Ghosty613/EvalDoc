@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Estadísticas</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="scripts/navbar.js" defer></script>
+    <script src="scripts/verificar.js" defer></script>
+</head>
+
+<body>
+    <div id="navbar-placeholder"></div>
+
+    <div class="showStats">
+        <button id="ver-estadisticas-admin">Ver estadísticas de docentes</button>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Botón para ver evaluaciones del docente
+            const btnEvaluaciones = document.getElementById('ver-evaluaciones');
+            if (btnEvaluaciones) {
+                btnEvaluaciones.addEventListener('click', () => {
+                    const usuario = localStorage.getItem('nombreUsuario');
+                    if (!usuario) {
+                        alert('No se encontró el nombre del usuario.');
+                        return;
+                    }
+                    window.location.href = `estadisticas_docente.php?usuario=${encodeURIComponent(usuario)}`;
+                });
+            }
+
+            // Botón para ver estadísticas del admin
+            const btnAdmin = document.getElementById('ver-estadisticas-admin');
+            if (btnAdmin) {
+                btnAdmin.addEventListener('click', () => {
+                    window.location.href = 'estadisticas_admin.php';
+                });
+            }
+        });
+    </script>
+
+</body>
+
+</html>

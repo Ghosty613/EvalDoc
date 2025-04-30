@@ -6,10 +6,27 @@
   <title>Estadísticas</title>
   <link rel="stylesheet" href="styles.css" />
   <script src="scripts/navbar.js" defer></script>
+  <script src="scripts/verificar.js" defer></script>
 </head>
 
 <body>
   <div id="navbar-placeholder"></div>
+
+  <div class="showStats">
+    <button id="mostrar-estadisticas">Ver estadísticas</button>
+  </div>
+  <script>
+    document.getElementById('mostrar-estadisticas').addEventListener('click', function () {
+      const nombreUsuario = localStorage.getItem('nombreUsuario');
+
+      if (!nombreUsuario) {
+        alert("No se ha encontrado el nombre del usuario.");
+        return;
+      }
+
+      window.location.href = `estadisticas.php?usuario=${encodeURIComponent(nombreUsuario)}`;
+    });
+  </script>
 </body>
 
-</html
+</html>

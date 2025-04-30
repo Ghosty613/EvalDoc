@@ -705,3 +705,25 @@ nav a:last-child {
   font-size: 2vh;
   float: right;
 }
+
+/*Estadísticas*/
+.showStats{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+}
+
+#mostrar-estadisticas , #ver-evaluaciones {
+  border: transparent;
+  border-radius: 5vh;
+  background-color: rgb(214, 43, 43);
+  color: white;
+  font-family: Garet, 'sans-serif';
+  font-size: 2vh;
+  padding: 2vh;
+}
+
+#mostrar-estadisticas:active, #ver-evaluaciones:active {
+  background-color: rgb(230, 100, 100);
+}

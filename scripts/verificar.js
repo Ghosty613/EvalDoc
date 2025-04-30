@@ -13,7 +13,7 @@ function verificarEstadisticas(){
         window.location.href = "estadisticas.html";
     } else if(tipoUsuario === "docente") {
         window.location.href = "estadisticas_docente.html";
-    } else if(tipoUsuario === "admin") {
+    } else if(tipoUsuario === "administrador") {
         window.location.href = "estadisticas_admin.html";
     }
 }
