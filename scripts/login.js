@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const loginForm = document.getElementById('loginForm');
-    const userInput = document.getElementById('userText');
-    const passwordInput = document.getElementById('passwordText');
+    const userInput = document.getElementById('userInput');
+    const passwordInput = document.getElementById('passwordInput');
 
     if (loginForm) {
         function validarCampos(usuario, password) {

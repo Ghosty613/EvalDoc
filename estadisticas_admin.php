@@ -39,10 +39,12 @@ $promedios_json = json_encode($promedios);
         table { width: 100%; border-collapse: collapse; margin-top: 20px; }
         th, td { border: 1px solid #ccc; padding: 8px; text-align: center; }
         canvas { width: 100%; max-width: 800px; margin: 20px auto; display: block; }
+        #main { text-decoration: none; }
     </style>
 </head>
 <body>
 
+<a href="main.html" id="main">←</a>
 <h1>Evaluaciones por Docente</h1>
 
 <canvas id="grafica"></canvas>

@@ -51,10 +51,12 @@ $puntuaciones_json = json_encode($puntuaciones);
         canvas { width: 100%; max-width: 600px; margin: 0 auto; display: block; }
         table { width: 100%; border-collapse: collapse; margin-top: 20px; }
         th, td { border: 1px solid #ccc; padding: 8px; text-align: center; }
+        #main { text-decoration: none; }
     </style>
 </head>
 <body>
 
+<a href="main.html" id="main">←</a>
 <h1>Evaluaciones Recibidas</h1>
 <h2><?= htmlspecialchars($nombreDocente) ?></h2>
 

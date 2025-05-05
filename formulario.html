@@ -11,9 +11,10 @@
 <body>
   <div id="navbar-placeholder"></div>
 
-    <h1 id="eval-title">Evaluación Docente</h1> 
-    <div id="disclaimer">Esta evaluación es confidencial y anónima, su único fin es mejorar la calidad educativa. No tendrá
-      repercusiones negativas para ninguna de las partes.</div>
+  <h1 id="eval-title">Evaluación Docente</h1>
+  <div id="disclaimer">Esta evaluación es confidencial y anónima, su único fin es mejorar la calidad educativa. No
+    tendrá
+    repercusiones negativas para ninguna de las partes.</div>
   <div id="contenedor-formulario">
     <form id="form_evaluacion" action="guardar_evaluacion.php" method="POST">
       <p>1.- ¿Consideras que el docente demuestra un buen conocimiento sobre la materia que imparte?</p>
@@ -82,7 +83,8 @@
       <label for="p6-op4">Parcialmente en desacuerdo</label><br>
       <input type="radio" id="p6-op5" name="pregunta6" value="En desacuerdo">
       <label for="p6-op5">En desacuerdo</label><br><br>
-      <p>7.- ¿El entorno de aprendizaje (aula, laboratorio, plataforma virtual) es adecuado para el desarrollo del curso?</p>
+      <p>7.- ¿El entorno de aprendizaje (aula, laboratorio, plataforma virtual) es adecuado para el desarrollo del
+        curso?</p>
       <input type="radio" id="p7-op1" name="pregunta7" value="De acuerdo" required>
       <label for="p7-op1">De acuerdo</label><br>
       <input type="radio" id="p7-op2" name="pregunta7" value="Parcialmente de acuerdo">
@@ -346,7 +348,9 @@
       <label for="p30-op4">Parcialmente en desacuerdo</label><br>
       <input type="radio" id="p30-op5" name="pregunta30" value="En desacuerdo">
       <label for="p30-op5">En desacuerdo</label><br><br>
-      <button type="submit" id="finalizar_evaluacion">Finalizar evaluación</button>
+      <div id="contenedor-finalizar">
+        <button type="submit" id="finalizar_evaluacion">Finalizar evaluación</button>
+      </div>
     </form>
   </div>
 </body>

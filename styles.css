@@ -19,47 +19,18 @@ body {
   margin: 0;
 }
 
-/*Login*/
-.mainContainer {
-  display: flex;
-  flex-direction: row;
-  height: 100%;
-}
-
-.loginContainer {
-  background-color: rgba(255, 255, 255, 0.5);
-  height: 380px;
-  border-radius: 20px;
-  width: 500px;
-  display: flex;
-  flex-direction: column;
-  gap: 50px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-}
-
-.helpContainer {
-  display: flex;
-  gap: 100px;
-  margin-top: 5px;
-  margin-left: 15px;
-  margin-right: 20px;
-}
-
-#loginForm {
-  padding: 30px;
-}
-
-.input {
-  width: 100%;
-  max-width: 500px;
-  margin: 20px auto;
-  padding: 20px;
-}
-
+/*=============================== Login ===============================*/
 .left,
 .right {
   flex: 1;
   padding: 20px;
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 .right {
@@ -71,97 +42,215 @@ body {
   align-items: center;
 }
 
-.titleBlock {
-  margin: 0px;
+.mainContainer {
   display: flex;
-  justify-content: center;
+  flex-direction: row;
+  height: 100%;
+}
+
+/*izquierda*/
+.titleBlock {
+  display: flex;
   align-items: center;
-  width: 100%;
+  width: 95%;
   background-color: #1b396b;
-  border-radius: 50px;
-  text-align: center;
+  border-radius: 10vh;
   color: white;
-  height: 150px;
-  margin-top: 20px;
-  font-size: 23px;
+  height: 15vh;
+  font-size: 2.1vh;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
   font-weight: bold;
+  margin-top: 2vh;
 }
 
 .bodyBlock {
   display: flex;
   justify-content: center;
   align-items: center;
-  text-align: center;
   width: 100%;
-  height: 70%;
-  font-size: 25px;
+  height: 77vh;
+  font-size: 2.2vh;
 }
 
 #copyright {
+  font-size: 1.7vh;
+}
+
+/*derecha*/
+.loginContainer {
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 20px;
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.helpContainer {
+  display: flex;
+  margin-top: 5px;
+  margin-left: 15px;
+  width: 91%;
+  justify-content: space-between;
+}
+
+#loginForm {
+  padding: 30px;
+}
+
+#log {
   display: flex;
   justify-content: center;
-  font-size: 15px;
-  left: 50%;
-  height: 100%;
+  font-weight: bold;
+  font-size: 20px;
+  margin: 10px;
+  margin-top: 0;
+  margin-left: 23px;
+  background-color: rgba(0, 0, 0, 0.1);
+  width: 91%;
 }
 
 #login {
-  margin-left: 15px;
-  width: 405px;
-  height: 60px;
+  width: 91%;
+  height: 50px;
   color: white;
   background-color: #1b396b;
-  border-radius: 10px;
-  font-size: 25px;
-  margin-bottom: 10px;
-  margin-top: 0;
-  border: 1px solid #1b396b;
+  border: #1b396b;
+  font-size: 20px;
+  margin-bottom: 1vh;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  font-family: Garet, sans-serif;
   letter-spacing: 5px;
+  font-family: Garet, sans-serif;
 }
 
 #login:active {
   background-color: #2980b9;
-  border-color: #2980b9;
 }
 
-#userText {
-  height: 50px;
+.input {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#userInput,
+#passwordInput {
+  height: 40px;
+  font-size: 20px;
+  font-family: Garet, sans-serif;
   margin-bottom: 20px;
-  font-size: 26px;
-  font-family: Garet, sans-serif;
-}
-
-#passwordText {
-  height: 50px;
-  font-size: 26px;
-  font-family: Garet, sans-serif;
+  width: 90%;
 }
 
 #forgot,
-#register {
+#registro {
+  margin-left: 9px;
   color: white;
-  border-color: transparent;
   cursor: pointer;
   font-family: Garet, sans-serif;
   font-weight: bold;
-  font-size: 15px;
-  border-radius: 50px;
+  font-size: 17px;
   text-decoration: none;
+  background-color: rgba(0, 0, 0, 0.1);
+  line-height: 1;
+  display: flex;
+  text-align: center;
+  align-items: center;
 }
 
-#register:active,
+#registro:active,
 #forgot:active {
   text-decoration: underline;
 }
 
-/*NavBar*/
+/* =============================== Login MOVIL =============================== */
+@media (max-width: 768px) {
+  .mainContainer {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .left,
+  .right {
+    flex: 1;
+    overflow: hidden;
+  }
+
+  .left {
+    display: none;
+  }
+
+  .right {
+    width: 100%;
+    height: 100vh;
+  }
+
+  .loginContainer {
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 3vh;
+    width: 90%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  }
+
+  .inputContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #userInput,
+  #passwordInput {
+    display: flex;
+    height: 40px;
+    font-size: 15px;
+    font-family: Garet, sans-serif;
+    margin-bottom: 20px;
+    width: 100%;
+  }
+
+  #login {
+    height: 40px;
+    color: white;
+    background-color: #1b396b;
+    border: transparent;
+    font-size: 15px;
+    margin-bottom: 1vh;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    letter-spacing: 5px;
+    font-family: Garet, sans-serif;
+    width: 100%;
+  }
+
+  #log {
+    margin: 0;
+    margin-bottom: 2vh;
+    width: 100%;
+  }
+
+  .helpContainer {
+    gap: 10%;
+    margin-left: 0;
+  }
+
+  #forgot,
+  #registro {
+    font-size: 12px;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+}
+
+/* =============================== NavBar =============================== */
 nav {
   background-color: #1b396b;
-  text-decoration: none;
   height: 10vh;
   display: flex;
   align-items: center;
@@ -188,59 +277,15 @@ nav a:last-child {
   margin-left: -70%;
 }
 
-.dropdown-e {
-  position: relative;
-  display: inline-block;
-  margin-left: 20px;
-  margin-right: 20px;
-}
-
-.dropbtn-e {
-  background-color: #1b396b;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  cursor: pointer;
-  border-radius: 4px;
-}
-
-.dropdown-content-e {
-  display: none;
-  position: absolute;
-  background-color: #f1f1f1;
-  min-width: 200px;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  z-index: 1;
-  border-radius: 4px;
-  top: 33px;
-}
-
-.dropdown-content-e a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-}
-
-.dropdown-content-e a:hover {
-  background-color: #ddd;
-}
-
-.dropdown-e:hover .dropdown-content-e {
-  display: block;
-}
-
-.dropdown-e:hover .dropbtn-e {
-  background-color: #2980b9;
-}
-
+/* Estilos generales para dropdowns */
+.dropdown-e,
 .dropdown-u {
   position: relative;
   display: inline-block;
-  margin-left: 20px;
-  margin-right: 20px;
+  margin: 0 20px;
 }
 
+.dropbtn-e,
 .dropbtn-u {
   background-color: #1b396b;
   color: white;
@@ -250,18 +295,25 @@ nav a:last-child {
   border-radius: 4px;
 }
 
+.dropdown-content-e,
 .dropdown-content-u {
   display: none;
   position: absolute;
   background-color: #f1f1f1;
-  min-width: 200px;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
   z-index: 1;
   border-radius: 4px;
-  top: 50px;
-  left: -100px;
 }
 
+.dropdown-content-e {
+  min-width: 225px;
+}
+
+.dropdown-content-u {
+  min-width: 180px;
+}
+
+.dropdown-content-e a,
 .dropdown-content-u a {
   color: black;
   padding: 12px 16px;
@@ -269,26 +321,86 @@ nav a:last-child {
   display: block;
 }
 
+.dropdown-content-e a:hover,
 .dropdown-content-u a:hover {
   background-color: #ddd;
 }
 
+/* Posición específica de los menús desplegables */
+.dropdown-content-e {
+  top: 33px;
+}
+
+.dropdown-content-u {
+  top: 50px;
+  left: -100px;
+}
+
+/* Mostrar contenido al hacer hover */
+.dropdown-e:hover .dropdown-content-e,
 .dropdown-u:hover .dropdown-content-u {
   display: block;
 }
 
-.icono-casa {
+.dropdown-e:hover .dropbtn-e {
+  background-color: #2980b9;
+}
+
+.icono-home,
+.icono-user {
   width: 40px;
   height: auto;
-  margin-top: 5px;
 }
 
-.icono-user {
-  width: 50px;
-  height: auto;
+/* =============================== NavBar MOVIL =============================== */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: auto;
+    padding: 10px;
+  }
+
+  .middle-content {
+    flex: 1;
+    display: flex;
+    margin: 0 10px;
+    flex-wrap: wrap;
+  }
+
+  .dropdown-e,
+  .dropdown-u {
+    margin: 5px;
+  }
+
+  .dropbtn-e,
+  .dropbtn-u {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+
+  .dropdown-content-e,
+  .dropdown-content-u {
+    min-width: 170px;
+    font-size: 14px;
+  }
+
+  .dropdown-content-e {
+    min-width: 170px;
+  }
+
+  .dropdown-content-u {
+    top: 40px;
+    min-width: 150px;
+  }
+
+  .icono-home,
+  .icono-user {
+    width: 30px;
+  }
 }
 
-/*Main*/
+/* =============================== Main =============================== */
 .pageContainer {
   display: flex;
   flex-direction: column;
@@ -312,8 +424,14 @@ nav a:last-child {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-left: 125px;
-  margin-right: 125px;
+}
+
+.leftContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 75vh;
 }
 
 .bienvenido {
@@ -323,9 +441,7 @@ nav a:last-child {
   justify-content: center;
   background-color: #1b396b;
   color: white;
-  margin-top: 80px;
-  margin-left: 100px;
-  width: 560px;
+  width: 80%;
   padding: 20px;
   border-radius: 100px;
   font-size: 25px;
@@ -333,9 +449,8 @@ nav a:last-child {
 
 .social {
   background-color: #EEF0F4;
-  width: 500px;
-  margin-left: 100px;
-  margin-top: 20px;
+  width: 73%;
+  margin-top: 2vh;
   padding: 50px;
   display: flex;
   flex-direction: column;
@@ -358,9 +473,23 @@ nav a:last-child {
   margin: 10px;
 }
 
+.noticias {
+  display: flex;
+  color: white;
+  background-color: #1b396b;
+  width: 25%;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  height: 7%;
+  font-size: 20px;
+  border-radius: 50px;
+  margin-bottom: 3vh;
+}
+
 .carousel-container {
   position: relative;
-  width: 100%;
+  width: 80%;
   max-width: none;
   margin: 0 auto;
   overflow: hidden;
@@ -426,20 +555,6 @@ nav a:last-child {
   background: #1b396b;
 }
 
-.noticias {
-  display: flex;
-  color: white;
-  background-color: #1b396b;
-  width: 225px;
-  justify-content: center;
-  justify-items: center;
-  align-items: center;
-  height: 50px;
-  font-size: 20px;
-  border-radius: 50px;
-  margin: 20px;
-}
-
 .footer {
   text-align: center;
   background-color: #1b396b;
@@ -450,11 +565,83 @@ nav a:last-child {
   border-radius: 30px;
 }
 
-/* Register */
+/* =============================== Main MOVIL =============================== */
+@media (max-width: 768px) {
+  .pageContent {
+    flex-direction: column;
+  }
+
+  .leftSide,
+  .rightSide {
+    width: 100%;
+    height: auto;
+  }
+
+  .leftContent,
+  .rightContent {
+    width: 100%;
+    height: auto;
+    padding: 10px;
+  }
+
+  .bienvenido {
+    width: 85%;
+    padding: 0;
+    font-size: 14px;
+    flex-direction: row;
+  }
+
+  .social {
+    width: 90%;
+    font-size: 12px;
+    padding: 10px;
+  }
+
+  .social .social-icons {
+    gap: 0;
+  }
+
+  .social img {
+    width: 30px;
+  }
+
+  .noticias {
+    width: 80%;
+    font-size: 15px;
+  }
+
+  .carousel-container {
+    width: 90%;
+  }
+
+  .carousel-btn {
+    padding: 5px 7px;
+  }
+
+  .indicator {
+    width: 8px;
+    height: 8px;
+  }
+
+  .footer {
+    margin-top: 3%;
+    width: 90%;
+    font-size: 10px;
+  }
+}
+
+/* =============================== Register =============================== */
+.background-image {
+  background-image: url(images/aguila.jpg);
+  /* background-image: cover;
+  background-position: center;
+  background-repeat: no-repeat;  */
+}
+
 .registerContainer {
-  background-color: #EEF0F4;
-  width: 40%;
-  min-height: 75%;
+  background-color: rgba(238, 240, 244, 0.5);
+  width: 600px;
+  height: 500px;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -466,7 +653,7 @@ nav a:last-child {
   z-index: 1000;
 }
 
-.register {
+#register {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -474,11 +661,9 @@ nav a:last-child {
   font-size: 35px;
   font-weight: bold;
   color: white;
-  background-color: #1b396b;
-  border-radius: 25px;
-  width: 60%;
-  height: 75px !important;
+  width: 500px;
   margin-bottom: 50px;
+  background-color: rgba(0, 0, 0, 0.2);
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
   letter-spacing: 5px;
 }
@@ -503,19 +688,17 @@ nav a:last-child {
 }
 
 #registerBtn {
-  width: 50%;
-  height: 60px !important;
+  height: 50px;
+  width: 500px;
   background-color: #1b396b;
   color: white;
   border: none;
-  border-radius: 25px;
   font-size: 25px;
   cursor: pointer;
-  margin: 20px auto;
-  display: block;
+  display: inline-block;
   font-family: Garet, sans-serif;
   transition: background-color 0.3s ease;
-  letter-spacing: 5px;
+  letter-spacing: 2px;
 }
 
 #registerBtn:active {
@@ -523,14 +706,74 @@ nav a:last-child {
 }
 
 .regresar {
-  display: flex;
-  justify-content: flex-end;
-  margin-left: auto;
+  margin-top: 20px;
+  background-color: rgba(0, 0, 0, 0.2);
   margin-right: 20px;
-  padding: 10px;
 }
 
-/*Anuncio*/
+#main {
+  color: #1b396b;
+}
+
+/* =============================== Register MOVIL =============================== */
+@media (max-width: 768px) {
+  .background-image {
+    background-image: url(images/pixelaguila.webp)
+  }
+
+  .registerContainer {
+    width: 70%;
+    height: 50%;
+  }
+
+  @media (orientation: landscape) {
+    .registerContainer {
+      width: 50%;
+      height: 60%;
+    }
+  }
+
+  #register {
+    width: 180px;
+    font-size: 15px;
+    margin-bottom: 2%;
+    text-align: center;
+    margin: 0;
+    margin-bottom: 2%;
+  }
+
+  #registerForm input {
+    width: 100%;
+    height: 6vh;
+    font-size: 2vh;
+    margin-bottom: 2%;
+  }
+
+  .input-register {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+  }
+
+  #registerBtn {
+    width: 100%;
+    font-size: 12px;
+    height: fit-content;
+  }
+
+  .regresar {
+    margin-right: 0;
+    text-align: center;
+    width: 100%;
+    font-size: 10px;
+    margin-top: 2%;
+  }
+}
+
+/* =============================== Anuncio =============================== */
 #anuncio {
   padding: 5%;
   background-color: #EEF0F4;
@@ -550,10 +793,10 @@ nav a:last-child {
   justify-content: center;
 }
 
-#realizar{
+#realizar {
   background-color: #1b396b;
   border-color: transparent;
-  color:white;
+  color: white;
   font-size: 4vh;
   padding: 2vh;
   margin-inline: 40%;
@@ -561,11 +804,11 @@ nav a:last-child {
   cursor: pointer;
 }
 
-#realizar:active{
+#realizar:active {
   background-color: #2980b9;
 }
 
-/*Acceso denegado*/
+/* =============================== Acceso denegado ===============================  */
 #permiso {
   display: flex;
   justify-content: center;
@@ -573,7 +816,7 @@ nav a:last-child {
   height: 88vh;
 }
 
-/*Docentes*/
+/* =============================== Docentes =============================== */
 #text {
   display: flex;
   justify-content: center;
@@ -581,10 +824,17 @@ nav a:last-child {
   margin-top: 5%;
 }
 
-.tabla {
-  display:flex;
+#advertencia {
+  margin-top: 1%;
+  display: flex;
   justify-content: center;
-  margin-top: 5vh ;
+  text-align: center;
+}
+
+.tabla {
+  display: flex;
+  justify-content: center;
+  margin-top: 5vh;
 }
 
 .tokenDocentes {
@@ -619,7 +869,7 @@ nav a:last-child {
 }
 
 #boton-docente {
-  color:white;
+  color: white;
   background-color: #1b396b;
   border-color: transparent;
   width: 15vh;
@@ -631,13 +881,13 @@ nav a:last-child {
 }
 
 #contenedor-finalizar {
-  display:flex;
+  display: flex;
   justify-content: end;
   margin-top: 5%;
 }
 
 #imprimir {
-  color:white;
+  color: white;
   background-color: #2E8181;
   border-color: transparent;
   width: 10%;
@@ -651,8 +901,10 @@ nav a:last-child {
   background-color: #509999;
 }
 
-#finalizar {
-  color:white;
+
+
+/* #finalizar {
+  color: white;
   background-color: #b81868;
   border-color: transparent;
   width: 8%;
@@ -664,20 +916,28 @@ nav a:last-child {
 
 #finalizar:active {
   background-color: #ce5e96;
+} */
+
+/* =============================== Docentes MOVIL =============================== */
+@media (max-width: 768px) {
+
+  #text,
+  #advertencia,
+  #buscarDocentes,
+  #tokenInput,
+  #imprimir {
+    font-size: 10px;
+  }
+
+  #imprimir {
+    width: fit-content;
+  }
 }
 
-#advertencia {
-  margin-top: 1%;
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  
-}
-
-/*Formulario*/
+/* =============================== Formulario =============================== */
 #contenedor-formulario {
   background-color: #EEF0F4;
-  display:flex;
+  display: flex;
   margin-inline: 25%;
   border-radius: 20px;
   padding: 2%;
@@ -704,17 +964,46 @@ nav a:last-child {
   color: white;
   font-size: 2vh;
   float: right;
+  cursor: pointer;
 }
 
-/*Estadísticas*/
-.showStats{
+/* =============================== Formulario MOVIL =============================== */
+@media (max-width: 768px) {
+  #eval-title {
+    text-align: center;
+  }
+
+  #disclaimer {
+    text-align: center;
+  }
+
+  #contenedor-formulario {
+    width: 90%;
+    margin-inline: 5%;
+  }
+
+  #contenedor-finalizar {
+    display: flex;
+    justify-content: center;
+  }
+
+  #finalizar_evaluacion {
+    width: 40%;
+    font-size: 15px;
+    border-radius: 10px;
+  }
+}
+
+/* =============================== Estadísticas =============================== */
+/* .showStats {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 90vh;
 }
 
-#mostrar-estadisticas , #ver-evaluaciones {
+#mostrar-estadisticas,
+#ver-evaluaciones {
   border: transparent;
   border-radius: 5vh;
   background-color: rgb(214, 43, 43);
@@ -724,6 +1013,7 @@ nav a:last-child {
   padding: 2vh;
 }
 
-#mostrar-estadisticas:active, #ver-evaluaciones:active {
+#mostrar-estadisticas:active,
+#ver-evaluaciones:active {
   background-color: rgb(230, 100, 100);
-}
+} */

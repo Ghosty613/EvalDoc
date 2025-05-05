@@ -2,7 +2,7 @@ const tipoUsuario = localStorage.getItem('tipoUsuario');
 
 function verificarEvaluacion() {
     if (tipoUsuario === "alumno") {
-        window.location.href = "anuncio.html";
+        window.location.href = "docentes.html";
     } else {
         window.location.href = "acceso_denegado.html";
     }

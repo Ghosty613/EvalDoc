@@ -3,23 +3,26 @@
 
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Regístrate</title>
   <link rel="stylesheet" href="styles.css">
   <script src="/scripts/register.js" defer></script>
 </head>
 
-<body>
+<body class="background-image">
   <div class="registerContainer">
-    <div class="register">Registro</div>
+    <div class="input-register">
+    <div id="register">Regístrate</div>
     <form id="registerForm" action="register.php" method="POST">
-      <input type="email" name="email" placeholder="Correo" id="email-register">
-      <input type="text" name="user" placeholder="Usuario" id="user-register">
-      <input type="password" name="password" placeholder="Contraseña" id="password-register">
-      <input type="password" name="confirmPassword" placeholder="Confirmar Contraseña" id="confirmPassword-register">
-      <button type="submit" id="registerBtn">REGISTRAR</button>
+        <input type="email" name="email" placeholder="Correo" id="email-register">
+        <input type="text" name="user" placeholder="Usuario" id="user-register">
+        <input type="password" name="password" placeholder="Contraseña" id="password-register">
+        <input type="password" name="confirmPassword" placeholder="Confirmar Contraseña" id="confirmPassword-register">
+      <button type="submit" id="registerBtn">Registrar</button>
+      <div class="regresar">Ya tienes una cuenta? &nbsp;<a href="index.html" class="linkButton" id="main">Ingresa
+          aquí</a>
+      </div>
     </form>
-    <div class="regresar">Ya tienes una cuenta? &nbsp;<a href="index.html" class="linkButton" id="main">Ingresa aquí</a>
-    </div>
   </div>
 </body>
 
